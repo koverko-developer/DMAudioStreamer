@@ -7,4 +7,5 @@
 
     <!-- Bottom control panel-->
     <dimen name="bottom_control_panel">220dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

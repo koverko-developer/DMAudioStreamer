@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">DMAudioStreamer</string>
+    <string name="app_name">VNPlayer music offline</string>
+    <string-array name="menu">
+        <item>Мои аудиозаписи</item>
+        <item>Новинки</item>
+        <item>Популярное</item>
+        <item>Специально для Вас</item>
+        <item>Ваши группы</item>
+    </string-array>
+    <string name="title_activity_search">SearchActivity</string>
 </resources>

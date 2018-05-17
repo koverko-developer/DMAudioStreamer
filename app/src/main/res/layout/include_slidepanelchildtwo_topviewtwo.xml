@@ -8,18 +8,28 @@
     android:gravity="center"
     android:orientation="horizontal">
 
+    <dm.audiostreamerdemo.widgets.LineProgress
+        android:id="@+id/lineProgress"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="?attr/actionBarSize" />
+
+    <ImageView
+        android:id="@+id/img_bottom_albArt"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_default_album_art"></ImageView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_toLeftOf="@+id/rel_bottombar_moreicon"
+        android:layout_below="@+id/lineProgress"
+        android:layout_marginRight="6dp"
+        android:layout_toLeftOf="@+id/lin.time"
+        android:layout_toRightOf="@+id/img_bottom_albArt"
         android:elevation="4dp">
-
-        <ImageView
-            android:id="@+id/img_bottom_albArt"
-            android:layout_width="?attr/actionBarSize"
-            android:layout_height="?attr/actionBarSize"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_default_album_art"></ImageView>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -62,17 +72,12 @@
                     android:textStyle="normal" />
             </LinearLayout>
 
-            <dm.audiostreamerdemo.widgets.LineProgress
-                android:id="@+id/lineProgress"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_alignParentTop="true" />
-
         </RelativeLayout>
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/lin.time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -91,7 +96,7 @@
             android:singleLine="true"
             android:text="00.00"
             android:textColor="@color/md_blue_grey_700"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,7 +117,7 @@
             android:singleLine="true"
             android:text="00.00"
             android:textColor="@color/md_blue_grey_700"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 

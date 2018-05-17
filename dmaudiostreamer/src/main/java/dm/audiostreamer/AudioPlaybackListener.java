@@ -16,8 +16,15 @@ import android.net.wifi.WifiManager;
 import android.os.PowerManager;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Response;
 
 import static android.media.MediaPlayer.OnCompletionListener;
 import static android.media.MediaPlayer.OnErrorListener;
@@ -27,6 +34,8 @@ import static android.media.MediaPlayer.OnSeekCompleteListener;
 public class AudioPlaybackListener implements PlaybackListener, AudioManager.OnAudioFocusChangeListener,
         OnCompletionListener, OnErrorListener, OnPreparedListener, OnSeekCompleteListener {
     private static final String TAG = Logger.makeLogTag(AudioPlaybackListener.class);
+
+
 
     public static final float VOLUME_DUCK = 0.2f;
     public static final float VOLUME_NORMAL = 1.0f;
@@ -119,7 +128,8 @@ public class AudioPlaybackListener implements PlaybackListener, AudioManager.OnA
     }
 
     @Override
-    public void play(MediaMetaData item) {
+    public void play(final MediaMetaData item) {
+        Log.e("SERVICES", "start play");
         mPlayOnFocusGain = true;
         tryToGetAudioFocus();
         registerAudioNoisyReceiver();
@@ -133,30 +143,46 @@ public class AudioPlaybackListener implements PlaybackListener, AudioManager.OnA
             configMediaPlayerState();
         } else {
             mState = PlaybackStateCompat.STATE_STOPPED;
-            relaxResources(false); // release everything except MediaPlayer
+            relaxResources(false);
             String source = item.getMediaUrl();
-            if (source != null) {
-                source = source.replaceAll(" ", "%20"); // Escape spaces for URLs
-            }
-            try {
-                createMediaPlayerIfNeeded();
-                mState = PlaybackStateCompat.STATE_BUFFERING;
-                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                mMediaPlayer.setDataSource(source);
+                            if (source != null) {
+                                source = source.replaceAll(" ", "%20"); // Escape spaces for URLs
+                                Log.e("API", source);
+                            }else {
+                                Log.e("API cache:", item.getCache());
+                                source = item.getCache();
+                                source = source.replaceAll(" ", "%20");
+                            }
 
-                mMediaPlayer.prepareAsync();
-                mWifiLock.acquire();
+                            try {
+                                createMediaPlayerIfNeeded();
+                                mState = PlaybackStateCompat.STATE_BUFFERING;
+                                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                if(!item.isCache())mMediaPlayer.setDataSource(source);
+                                else {
 
-                if (mCallback != null) {
-                    mCallback.onPlaybackStatusChanged(mState);
-                }
+                                    String stringPath = android.net.Uri.parse("file://" + item.getCache()).getPath();
+                                    mMediaPlayer.setDataSource(stringPath);
+                                    Log.d("API CACHE: ",stringPath);
+                                }
 
-            } catch (IOException ex) {
-                Logger.e(TAG, ex, "Exception playing song");
-                if (mCallback != null) {
-                    mCallback.onError(ex.getMessage());
-                }
-            }
+                                mMediaPlayer.prepareAsync();
+                                mWifiLock.acquire();
+
+                                if (mCallback != null) {
+                                    mCallback.onPlaybackStatusChanged(mState);
+                                }
+
+                            } catch (IOException ex) {
+                                Logger.e(TAG, ex, "Exception playing song");
+                                if (mCallback != null) {
+                                    mCallback.onError(ex.getMessage());
+                                }
+                            }
+            // release everything except MediaPlayer
+//
+//
+
         }
     }
 
@@ -423,4 +449,6 @@ public class AudioPlaybackListener implements PlaybackListener, AudioManager.OnA
             e.printStackTrace();
         }
     }
+
+
 }

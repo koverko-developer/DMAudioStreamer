@@ -184,3 +184,2551 @@
     }
   ]
 }
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+class="vk vk_js_no  vk_flex_no r d h  vk_appAuth_no"
+>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="MobileOptimized" content="176" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="theme-color" content="#5181b8" />
+<base id="base">
+<meta name="robots" content="noindex,nofollow" /><meta http-equiv="origin-trial" data-feature="getInstalledRelatedApps" data-expires="2018-01-30" content="AqnBW3j/m56zAZN0fBjy5CYB0Z+nCthDicsVAa+nub6HQaZ2JaRPv8KZhidJHoyt/kmyGoAYcnby1QXbPjwbSwAAAABfeyJvcmlnaW4iOiJodHRwczovL3ZrLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW5zdGFsbGVkQXBwIiwiZXhwaXJ5IjoxNTE3MjcwNDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
+
+<title>Музыка Дмитрия Коверко</title>
+<link rel="shortcut icon" href="/images/icons/favicons/fav_logo.ico?8"></link>
+<script>
+(function() {
+window.isMVK = true;
+window.isNewMail = false;
+window.isNewHeader = true;
+window.audioSubscribe = false;
+
+var vkElem = document.querySelector('.vk');
+var vkClass = vkElem.getAttribute('class');
+
+var supports = {
+js: true,
+flex: window.CSS && CSS.supports && (
+CSS.supports('display', 'flex') ||
+CSS.supports('display', '-webkit-flex') ||
+CSS.supports('display', '-ms-flexbox')
+)
+};
+
+supports.js && (vkClass = vkClass.replace('vk_js_no', 'vk_js_yes'));
+supports.flex && (vkClass = vkClass.replace('vk_flex_no', 'vk_flex_yes'));
+vkElem.setAttribute('class', vkClass);
+})();
+</script>
+
+<script type="text/javascript">
+<!--
+(function(k,a,d,e,f){function l(){var c=function(){var b=!1;try{b=new XMLHttpRequest}catch(a){try{b=new ActiveXObject("Msxml2.XMLHTTP")}catch(d){try{b=new ActiveXObject("Microsoft.XMLHTTP")}catch(c){b=!1}}}return b?e:f}(),g=function(){var b=k.createElement("div");b.innerHTML='<input type="file" />';b=b.getElementsByTagName("input")[0];return"file"!=b.type||b.disabled?f:e}(),h="ontouchstart"in a?e:f,m;try{m=typeof navigator.geolocation!==d?e:typeof a.google!==d&&typeof google.gears!==d?e:typeof device!==d&&typeof device.getServiceObject!==d?e:typeof Mojo!==d&&"Mojo.Service.Request"!==typeof Mojo.Service.Request?e:f}catch(p){m=f}var l=function(b){try{var d=a.Audio?new Audio:k.createElement("audio");if(d.canPlayType&&d.canPlayType(b)&&"no"!=d.canPlayType(b))return e}catch(c){}return f}("audio/mpeg"),n=function(b){try{for(var a=k.createElement("div"),c=0,g=["webkit","Moz","ms","O",""],h=g.length;c<h;c++){var l=g[c],m=l?l+b:b.toLowerCase();if(typeof a.style[m]!==d)return e}return f}catch(n){return f}}("Transform");return c+g+h+m+l+n+((a.XMLHttpRequest||a.XDomainRequest)&&(a.FormData||a.FileReader&&(a.XMLHttpRequest&&XMLHttpRequest.sendAsBinary||a.ArrayBuffer&&a.Uint8Array&&(a.MozBlobBuilder||a.WebKitBlobBuilder||a.BlobBuilder)))?e:f)}var c=a.screen,g=c.width||0,c=c.height||0,n=a.devicePixelRatio||1,p=(k.cookie.match(/(^|;\s+)remixmdevice=([^;]+)/)||[])[2]||"",h=p.split("/");p&&g==h[0]&&c==h[1]&&7==h[3].length||(g=[g,c,n,l()].join("/"),k.cookie="remixmdevice=; expires="+(new Date(0)).toUTCString()+"; path=/",k.cookie="remixmdevice="+g+"; expires="+(new Date((new Date).getTime()+7776E6)).toUTCString()+"; path=/; domain=.vk.com",location.replace(location.toString()))})(document,window,"undefined","!","-");!function(o,a){var e=o.hash||"",t=e.substr(2);if("#/"==e.substr(0,2)){var i=window.locDomain,n=new Date;n.setTime(n.getTime()+864e5);var r="; expires="+n.toGMTString();document.cookie=["remixtmp_hash_nav","=",o.href,r,"; path=/",i?"; domain=."+i:""].join(""),!a&&(t.match(/^\/*(away|login)(\.php)?([^a-z0-9\.]|$)/)&&(t=""),o.replace(o.protocol+"//"+o.host+"/"+t))}}(location);
+//-->
+</script>
+        <link type="text/css" rel="stylesheet" href="/css/s_c.css?716"></link>
+<link type="text/css" rel="stylesheet" media="only screen" href="/css/s_yzg.css?196"></link>
+<script type="text/javascript" src="/js/s_z.js?1"></script>
+<link rel="manifest" href="/manifest.webapp" />
+
+    <link rel="canonical" href="https://vk.com/audio?id=185645054" />
+    <link rel="alternate" href="android-app://com.vkontakte.android/vkontakte/m.vk.com/audio?id=185645054" />
+
+
+      </head>
+
+      <body id="vk"  class="vk__page _hover vk_stickers_hints_support_no opera_mini_no  vk_al_no">
+            <div class="layout">
+
+
+          <div class="layout__header mhead" id="vk_head">
+      <div class="hb_wrap">
+        <div class="hb_btn">&nbsp;</div>
+      </div>
+    </div>
+      <div class="layout__body " id="vk_wrap">
+        <div class="layout__leftMenu" id="l">
+
+        </div>
+        <div class="layout__basis" id="m">
+              <div class="basis">
+      <div class="basis__header mhead" id="mhead">    <a
+      class="header__left hb_wrap mhb_home mhb_vkhome"
+      aria-label="Меню"
+
+       href="/" accesskey="*"
+    >
+      <div class="hb_btn mhi_home mhi_vkhome">&nbsp;</div>
+    </a>
+          <h1 class="header__center hb_wrap mhb_back  al_back  is_unfold">
+        <span class="header__title hb_btn mh_header mhi_back">    <div class="header__unfold">    <div class="Unfold" >
+          <a href="/main.php?subdir=audio&id=185645054&open_menu=1" class="Unfold__trigger" onclick="Unfold._onTriggerClick(event)" onmousedown="Unfold._onTriggerMouseDown(this)">
+          <div class="Unfold__triggerText"  >
+      Моя музыка
+    </div>    <div class="Unfold__triggerIcon Icon Icon_reveal"  >
+
+    </div>
+    </a>
+      <div class="Unfold__popup">
+            <a class="al_tab Unfold__item Unfold__item_active Unfold__item_name_all" href="/audio" >
+          <div class="Unfold__itemText"  >
+      Моя музыка
+    </div>
+    </a>    <a class="al_tab Unfold__item Unfold__item_name_popular" href="/audio?act=popular" >
+          <div class="Unfold__itemText"  >
+      Популярное
+    </div>
+    </a>
+      </div>
+    </div></div></span>
+      </h1>
+        <div class="header__right">
+      <a class="Bell" href="/feed?section=notifications" aria-label="Уведомления">    <div class="Bell__icon Icon Icon_bell"  >
+
+    </div><div class="Bell__counter">1</div></a>
+      <a
+        class="hb_wrap mhb_notify mhb_no_notify"
+        id="header_msgs"
+        href="/mail"
+        aria-label="Сообщения"
+        accesskey="#"
+      >
+        <div class="hb_btn mhi_notify">
+          &nbsp;
+        </div>
+      </a>
+    </div></div>
+
+      <div class="basis__content mcont" id="mcont" data-canonical="https://vk.com/audio?id=185645054"><div class="pcont audioPage"><div class="audioPage__header"><div class="audioPage__search"><div class="hp_block"><form action="/audio" class="qsearch">
+  <input type="hidden" name="" value="">
+  <table class="row_table"><tr>
+    <td class="row_table_main_column">
+      <div class="qs_field_wrap">
+
+        <div class="iwrap"><input type="text" class="textfield qs_textfield" name="q" value="" autocomplete="off" placeholder="Поиск" oninput="AudioPlaylist.copyValue(this, 'au_search_playlist');"></div>
+      </div>
+    </td>
+    <td class="row_table_last_column"><input class="button qs_button al_tab" type="submit" value="Искать" /></td>
+  </tr></table>
+</form></div><div class="audioAttention">
+  <div class="audioAttention__overlay" onclick="AudioSubscribe.hidePaymentAlert();"></div>
+  <div class="audioAttention__wrap">
+    <div class="audioAttention__alert">
+      <div class="audioAttention__close" onclick="AudioSubscribe.hidePaymentAlert();"></div>
+      <div class="audioAttention__table">
+        <div class="audioAttention__cell audioAttention__cell_icon">
+          <div class="audioAttention__icon"></div>
+        </div>
+        <div class="audioAttention__cell audioAttention__cell_content">
+          <div class="audioAttention__title">Фоновое прослушивание музыки приостановлено</div>
+          <div class="audioAttention__desc">Купите подписку и слушайте музыку без ограничений</div>
+          <a href="/page-147845620_52070784?from=audio" onclick="AudioSubscribe.hidePaymentAlert();" class="audioAttention__button">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="hp_block" id="_form_cont" style="display:none"><form action="/audio" class="qsearch">
+  <input type="hidden" name="" value="">
+  <table class="row_table"><tr>
+    <td class="row_table_main_column">
+      <div class="qs_field_wrap">
+
+        <div class="iwrap"><input type="text" class="textfield qs_textfield" name="q" value="" autocomplete="off" placeholder="Поиск"></div>
+      </div>
+    </td>
+    <td class="row_table_last_column"><input class="button qs_button al_tab" type="submit" value="Искать" /></td>
+  </tr></table>
+</form></div></div></div><div class="upanel"><div id="au_search_playlist_items"></div><div class="bl_cont" id="au_search_items"><div class="audioPage__count">627 аудиозаписей</div><div class="audios_block audios_list _si_container">
+      <div id="audio185645054_456239124_audios185645054" data-id="185645054_456239124_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239124_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239124_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239124_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="266" onclick="audioplayer.switchTimeFormat(this, event);">4:26</div>
+          <div class="ai_label">
+            <span class="ai_title">(DJ MARS MASHUP)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">DVBBS ft. Borgeous &amp;  New World Sound &amp; Thomas Newson - Flute Tsunami</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AhzLwMvlsNzFnZDPrMrJtgS2zI5IDhr6tJeWwe5Mqw9FwNrzzL81A25TCtrcDdHilZfHngO1CenRoNr2tu5vB212su5WwuLHmZbNwNjFv2fIuxnKAg4Zzve4qtnZuI9stgOTyZz1CI9dns5HDw5JpO9JEM05ufnZDvvtuxjJr1rKAxrcBNbrAwvVugrFmZvKotLLEencsLLOx2DszJa9yuvHqNGXqLHJvKXZmfflztKXotHWBY5Or3DZCwPgtZDyzJvADuHMBKvZl3q#AqSZnJC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239123_audios185645054" data-id="185645054_456239123_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239123_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c836537/v836537446/30540/VLPCG_-aacs.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239123_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239123_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="243" onclick="audioplayer.switchTimeFormat(this, event);">4:03</div>
+          <div class="ai_label">
+            <span class="ai_title">Doggy Style</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">DJ Aligator Project</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AeuXDMrRoxHcrdy3lNHLCLqXxZPrz1LwBhzrBeHylvHUBtDnyxm3Bxjms1LJuNqZDZ1HmhbxExrKEJL1AeW5vxrxzvnbtMz6nxHpBtvisuvhss9tzhKTzxjgEM41EI9UsLzJqxrHnxuUsvLsvLP2sKP5C1fRDKeVChrxyxPSowffsKzTnwrVngzWBJq1uJfrDhuUC2q5ltbOztrowdCWDK4YsdD6C2LVqNzpqtGYtNLJCOzbsvbSl3vMmJuWEt8OrxHox3aWANPurhbFCa#AqSOnJm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239122_audios185645054" data-id="185645054_456239122_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239122_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239122_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239122_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="175" onclick="audioplayer.switchTimeFormat(this, event);">2:55</div>
+          <div class="ai_label">
+            <span class="ai_title">Meow</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Party Favor &amp; Zooly</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=vM9LAgzOnvq4ltfSzxP0zu42C3zmu3j5seHRywmXDLv1Cgnrmvq/zw1gDu1Kl3nUlZnPoxzfwuz6thvOmte3qK1IndrUAtfPvKHHlNHqsNj4C3PRlKe5qu1XlZnYz2HzEv82zOrHmffcqOrNCc5HmMyWlvnwutu3Cevtx2e6wNDjCdfSodu2x2XLyMrZn2z2AY9evMvLChqXtgf1tgXHANrZC1jRtufbCwjXn1nnugyOwNrqCMrpnZmZrc1VvfuZyZOTrfbpuZfznvG2qq#AqSYnJm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239121_audios185645054" data-id="185645054_456239121_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239121_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239121_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239121_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="187" onclick="audioplayer.switchTimeFormat(this, event);">3:07</div>
+          <div class="ai_label">
+            <span class="ai_title">Industricus</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Distantt</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=tJfqmK1byvbpCKX4tLnRnMncCNr1BJrIAdfRmwnsCMvNns1WCgTHlJbYwKXeD21qCdmVDZzynLLKCOvcowfHv2G5BwjMzMPSAhPVDfDcotnzrOHOA3fMzwuUvNmWuO9LrvP0AhrVBJfHv3H3mMTgsOqVnenMDLe6CgvMru1zyMDPBxzTogH5ngfWBKq4mNz4x3uUtdfVl3vPzv9opvmTr3ndDgCZEL91sJn2uZaTyMPIALz2v2Lrl3mWyNm5rt9cm2TMrs1ftw84zK1nEG#AqS5odC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239120_audios185645054" data-id="185645054_456239120_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239120_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239120_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239120_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="204" onclick="audioplayer.switchTimeFormat(this, event);">3:24</div>
+          <div class="ai_label">
+            <span class="ai_title">The Vibe</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Marshvll</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AhHVsxaZpxbPmLLlAgmYCNzICfzuuNvLl3rPodKOrJv5nOj1qunVCfu2tZjWlZftoc5hEuHgCZDeBvnYseHewhr2ExD1udrJzMrPzxiUEuuTyJeZDJzzCNjHmdjcB1jUDs5ZoNfXA2vKn195q3bRyxzZBNm5rZCOqNrrALrVzJbhmxDqmK85ENjgnxH3AwvIrI85mgfuzJm/ltbXmhnUEuz1uhbulOnLAxm3swDfCfjkBLj4qOKYx2rbyvHTqOyOt3bOsxfTDtLnvOzXlq#AqS3nZK">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239119_audios185645054" data-id="185645054_456239119_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239119_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c841520/v841520859/4d635/n_l06KBD9D8.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239119_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239119_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="201" onclick="audioplayer.switchTimeFormat(this, event);">3:21</div>
+          <div class="ai_label">
+            <span class="ai_title">Vai malandra (feat. Tropkillaz e DJ Yuri Martins)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Anitta, Mc Zaac, Maejor</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AdGUttnWyKi2ovvOqML2tK9FnMq4s2qXmNnbCef5m3DLDI9LnwT0rOvvmw5Ll2jpr2KWv3fZDxeTtMTlus49BJaVDLaWqOT6nJG4mcO6yv9Mn2fTp3rKudvxChbAohnHsdftrhjHzZnJwgKZuxHTDO0OlK1tzuO5oee3yxb0tenjENjbytbertDOAgS3AwnVmtfuDgv5yK9JnOPmmZK4AZu1Cg1QmLzonLvOC3GVseDHshuOtMzxCe5jtLP4COPJmhfHvuz0zI1Sstjn#AqSOotu">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239117_audios185645054" data-id="185645054_456239117_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239117_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239117_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239117_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="1194" onclick="audioplayer.switchTimeFormat(this, event);">19:54</div>
+          <div class="ai_label">
+            <span class="ai_title">Russian Podcast  [RUSSIAN club, HOUSE MIX]</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Dj Andreev</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AdLJCOHJAJjFwgjMx3ztn3mYAxqZtxnJzI9uzdbot1Lsvwv0AMnTDNr1nhLyCgvOAwuZzxGOnM5unY9csgLvEffHtKz1wdLxnKvTrZDymgK3DNjUt2rSBgCZms5outmVmJPUts55s3qYpO9VCfflmenZtI1iBvDJlKjRtJH5t2PyDNDczhLioxj3mK4VmguYDeHLmNbnywLktMDsBhbUtuz4rxnVnhbLrK82mMPtyZHipvyXwePfmO1FyufkouPemurRuZHqyO5Fzdvjva#AqSZnta">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239116_audios185645054" data-id="185645054_456239116_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239116_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239116_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239116_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="114" onclick="audioplayer.switchTimeFormat(this, event);">1:54</div>
+          <div class="ai_label">
+            <span class="ai_title">Я пришла</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Malumup</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgzHCMCTuI5vzMronxHRn1aWrOWWvMf2m2POng95sNjLB21fluXRmvi6CKvQDJrMD2m1vKL4ttLZnfm1ltGVvgS/BLfJyOT2n3vOvZzxwtryC241uMyYlMrtC1PLvuDZvgrKtxy2vZbkzdDwlZbesxrIvvPom3mTzvKTrMLLCfHpnfrWDZeXBM5AtdzmnvbjqKPLuKTcCK11zg92nJnHrMLpqtDLnhjWBO1fmu5nlZeWlY5FChHHCdjfthyYCO84otyTAMvsDw9OmtO3#AqSXmZi">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239115_audios185645054" data-id="185645054_456239115_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239115_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c638531/v638531447/49316/HIItp6IYY4U.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239115_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239115_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="315" onclick="audioplayer.switchTimeFormat(this, event);">5:15</div>
+          <div class="ai_label">
+            <span class="ai_title">Lunatic (K Beatz Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">X.FeelinX</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=rgGYB1H2zxu1mNrMvMDyC2Hjzey4BNjZAMrwwtr4me9uq2O5ChHvmenJAviUrxe1AxyWtc1InhzHyLHbtJLQotLWCMnRutjrDhHZDdaODdrRsZjpCeTHwM1Ty2m1CJrLl3bsmw44zgrYy3vilZHyuZDLy3COCOKXvhbzzNv4DLbNAMX0y1PWqtz5odnxwwG4qNrKDJa3p1CXtwfInZrmDv86vxbqq1eXms9PlJLcmuW9DZjWzhz2ztvbsY5PnxG5v196y2qVzuO1tK0#AqS1mZG">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239114_audios185645054" data-id="185645054_456239114_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239114_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c841035/v841035446/3e44/unxPmnBQ0u4.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239114_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239114_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="378" onclick="audioplayer.switchTimeFormat(this, event);">6:18</div>
+          <div class="ai_label">
+            <span class="ai_title">Right About It </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Poe</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgTvBgu2z2Tiuhj0rejQlNbjt1nUqZiZu1PKoJe9m28ZB1LZDe1IAs9nBunIAeXZCNyOzg5ZD1bHvMuWtgmUy1KZwxzPofLWEdLZt3aYzJrOEen3ufzwtv05D2zWnhrZmdjJD3GVm2LbChvJmey4whrsuMfZsgOXC3POCfCUnI9crteOzJnOyxrirZvkCMfADc1QDwTSnY9QruDuBJzPr2DlBJeZqwnTpZyOCOz1xZDTvtLpBLD1vLL2twuXodb6DJflqZrAEMvWtOqT#AqS2mZC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239113_audios185645054" data-id="185645054_456239113_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239113_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239113_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239113_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="264" onclick="audioplayer.switchTimeFormat(this, event);">4:24</div>
+          <div class="ai_label">
+            <span class="ai_title">Tell Me Who (Bentley Grey Remix) </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Tamia</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AdLvy1D4yxj2uMLyBgfVC1zPqI1zrMDgmeHWzvaZngGYCwiVEfzTss5vDOTmvfPQA3bNwxr4sePTlNbTCZ0VA3i/rI5hzeWOAZnOns1XyMy2z2u4A2vZnMLcDdiWy1rLuMzsstbyBvPWzLjMnuuYxY81DZD0r3qTDNnSwdvsBfPgEgrvzwjMyNbrBKeYDM81DLLPmM5LytLHowOYBNyOBxHdx1jkCI9WywHyodHft3bOB250B1DRlwS4Du9xC2yWzJuYDxvIthnHAt1I#AqS2mty">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239112_audios185645054" data-id="185645054_456239112_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239112_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239112_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239112_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="242" onclick="audioplayer.switchTimeFormat(this, event);">4:02</div>
+          <div class="ai_label">
+            <span class="ai_title">Read All About It (Amice Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Emeli Sandé</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=uZGZv20ZoxqYCM1jBY9iCdi9DwOVzw1FzxfSlMvkyKHNzuj3tg1brxbIrgnWugvKEgnpr2y4BNblsJf2y2O4DwHRC3rWoffqDc5OELryCLP1B3u2BYO1vuvYpZKUlxzgx2nMwdPQugTrl2GTmMXHnwfVlu9eBeLYotv6C2fmreX3DtfOzdqYAvaOBJnZtYOTudnMvLzdugHJzZz1n3zHDhnjmeDwnenHufLZuxfAmwyVqLLTsLrrn2L2v2H4mva1tZHdEezUoxzKmgrNzG#AqSZntq">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239111_audios185645054" data-id="185645054_456239111_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239111_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c636816/v636816452/708b2/VUsTHKzBPhQ.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239111_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239111_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="352" onclick="audioplayer.switchTimeFormat(this, event);">5:52</div>
+          <div class="ai_label">
+            <span class="ai_title">Even If (Lulleaux Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Benny Benassi &amp; Vassy</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Ag89DgfYmJDODfeYtxjPEuGXCc5eowXtmJPJttjFlwqUngDIlue/Dwi4l3fqmZKVyNbYsOLSCZfemMvmyxC1AwnUDenuDs9MngjZtI44utDhutbOmNr0CtC1lY1qDM1XzgX0C2vpmhnwC281y3bnzwXQuhr2rKOWwfGWCxK2ofjRm1zMBKf5zfPXmtLZnfD6C3HesMfXwNnkBY10mvfvze5ODNvAmtrmqtbLEfmZs3DWzfDrmNHSwKzwANbdqKHKCdKOz3bXuu5XCv0#AqSXodm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239110_audios185645054" data-id="185645054_456239110_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239110_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239110_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239110_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="302" onclick="audioplayer.switchTimeFormat(this, event);">5:02</div>
+          <div class="ai_label">
+            <span class="ai_title">Doctor (Anton Ishutin remix) </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Therr Maitz</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Adz6mdyYsNiOzxPIvZH0CZzYEs11vLfHr19WBuTAAgOOoLnOwxrmAg9gEKqZBgzLus9oz3b4DJLTne8WDuKVvta/vfPyDwn2BJnOmMHhzc5iCK82DMfqq2q5DhbIy1HZEe9dsvDMn2mYmhC3mfP5nY9nCwWOsMvNEhjvuMmXog1XyMvyzxPfzM5Nn1mOlKnbsdLpqOHUCJj4sLyOCef4t3LjneXIzs9WmJnMmuy3twvoAs44Av9OwxblyxzOC2mYm2zyrgS5wMzHwd1J#AqSOmda">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239109_audios185645054" data-id="185645054_456239109_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239109_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239109_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239109_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="320" onclick="audioplayer.switchTimeFormat(this, event);">5:20</div>
+          <div class="ai_label">
+            <span class="ai_title">Youth (Alex Hook Remix) </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Jako Diaz</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgHvCJ9PzZiWv3jyl3KWotfowtndC25ZzurhltzZvwGZzhG2zenqBJvMuJrLEtGUCNy5nMmTA1zHot1MCKGUmgWWn3zZt1HWnOHMuhbuzJLODvH0sxfVvhDpCvvUsZG5rNfdnhGVyY9ZzeLjyMjvv2jkAMLQwwi4AvnOnwuUmc96thbOCZDbyxrSBdiWsffqvNnzoeXJzxHWrtPHDgTPDuWOztjJufrTCOj3wtD6teDKB2nVA2z2DvLJBK1VodDpsZHzze4YzwvWrZrn#AqS1mde">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239108_audios185645054" data-id="185645054_456239108_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239108_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239108_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239108_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="260" onclick="audioplayer.switchTimeFormat(this, event);">4:20</div>
+          <div class="ai_label">
+            <span class="ai_title">Under The Same Sky (Bentley Grey Nu Disco Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Ellie Lawson </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgLkDwn4DhnmvZvHtO9Qyt83BKeVzwvyvgzwmNbMCtnmmLbLmee5tha2lvr4sI51B3GUlOG1nwn0DJj0C304nMfengrPx3KZELjYveqUBvi3CZfjyxn2EwfmDuXTC2Xjugr3DMPKvxCVEdOYowe2CJHRuuqWBwCWvvDTEw0WmJPZzfnZDhiXnY9jrKmXDdmWnurmtMPOCOfJDhvtqxa3txbImxiODvH1yNHsy2LpEvDVmg81EMvuzxvAqK5frZq4zg5dy3zptunnvKHj#AqS1nZa">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239107_audios185645054" data-id="185645054_456239107_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239107_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239107_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239107_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="200" onclick="audioplayer.switchTimeFormat(this, event);">3:20</div>
+          <div class="ai_label">
+            <span class="ai_title">Mini World (Exclusive Music Idea) </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Indila</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AhLWtxHXBuH3ns9cytbrlMe3thHpzhn5A2ToC3jKBJ03rvCOBfvTAw5tAMGZsY8ZzvrfrtfhuJH1tIOOqLLymf9HExb1mOqZmJLTqxzcnw9JDL9YCff0ugOZmI5Oyv9NzNreDZDJqs9Pp2C1BxrcBdfZsY11wxb1yOjMAtvZogvKwe54mZLyDxiVwtn2Dwu3mwS3ou5cEI1YmurOD3boytDrD2vNoxDLx2DrmKT4rM0XptK1oey2oufnlMjNzdfWDuzsrevXDvDjsNP0Cq#AqS2nde">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239106_audios185645054" data-id="185645054_456239106_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239106_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c639118/v639118448/6653e/-Nj6TbvzZmE.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239106_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239106_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="164" onclick="audioplayer.switchTimeFormat(this, event);">2:44</div>
+          <div class="ai_label">
+            <span class="ai_title">Kamandi - Smoke Club </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Agv5vff2mLK/zKz6lZbOnxHfCZmUDKrLCxbLlJjLCxbsCejiuwWOAs9KnhnOyMH1oenVn3zsDuLhC3vdmgfTruKVovf0rOjZzg5eoMrNlLuTqJfMzgnUmLzZuMvKswjIz292EwnUBM9ythjJztvsuMT6qNvhve8ZoeXfmZjyuNLUrgS5Bvbgu2fXCezcDuHdmdHOzdL3BhzLDffOme09DLr3B3zgAx03lOX5zenHB1zYBMLsDJj6odi1q2DnsMq1nMTkndHUsJzms1rY#AqSZotG">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239105_audios185645054" data-id="185645054_456239105_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239105_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239105_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239105_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="176" onclick="audioplayer.switchTimeFormat(this, event);">2:56</div>
+          <div class="ai_label">
+            <span class="ai_title">Aquilo  - Human (Marian Hill Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=BfGXBwvOAuz4wfPozxr0DffhC1e4nhD2twLQyZHIDJHHngn4nJe/zw1uDw4Wl3nUlZLPzM9HCv05q1bOmtuYBg42ndvqytfFzwLylNHzvhj6C3fRlJm5DKvTlZnvsuL1mw4Zv3bxmgvhswvyCs5HoeGODKKXxOC2CgLrD2fVC19ZCdfwzJi2rZHLBgrZwdH2xY9NttzvvhryAtr1BvDsChroC106mtHetejkvMLLCdn4vLuWCKfQzgr5yY10AMz1vZO2zf83sJvgzu5kxW#AqS3mtq">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239104_audios185645054" data-id="185645054_456239104_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239104_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239104_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239104_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="169" onclick="audioplayer.switchTimeFormat(this, event);">2:49</div>
+          <div class="ai_label">
+            <span class="ai_title">CV027 The J&#39;s &amp; SAYSRY -  Need You</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Ag90sgPzwfPpoge5BhDZuxjVrwfqCN05ntLJmZjWnLzrsZGVBgr5A2vWveeWsKfjEJHWvgP4utLTlNrOluSVBwO/Chj4wfiOEJnOnhjdn2jtEhf0whzrDwLLC2P1t2DLswzytu5rtL0Tofrgytnssc84DxnWvuSWyJ0Vv3PKCgrRxOznDhrflMCXDLjJmNnTmOLhs1LYytLSwufKDgDnA21gDhLZBxjWlJD6BeP2wNn0vg5QChbTuJHhvOThCOyXmJLrtMmWnvfHnd1K#AqSYnZi">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239103_audios185645054" data-id="185645054_456239103_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239103_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239103_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239103_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="211" onclick="audioplayer.switchTimeFormat(this, event);">3:31</div>
+          <div class="ai_label">
+            <span class="ai_title">TOSH  - De Tine </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Ac13CODZodDXlNvKq2Xznxn4nha5zxnjp1nmu29RDJH1vc8VqveXDJn5y2LctwTxrhj3ueP4mfDTlNrLlvyVwwTKAfzXs2OOvJnOnJL2ndLYExi5vg9LAgKYC3DFse9LnhDKmdjbwgTmoxrcBI12nc9Py2HIogzYDuz2m1rwAezKtLmTrtPHywu4q3rhBZvsvLP0sMvpytG4xZm1ttjOD3rZn2K4y3jWBO5clJzvDgPtvM4WChb1A1fUtZfbDLuOmdeOAfGXywDHvZOO#AqS1nZi">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239102_audios185645054" data-id="185645054_456239102_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239102_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239102_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239102_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="203" onclick="audioplayer.switchTimeFormat(this, event);">3:23</div>
+          <div class="ai_label">
+            <span class="ai_title">Emmit Fenn ft. Yuna - Modern Flame </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=zdzPm1bsoduUr3CUvw5rmMnLDOLYne95CMeXEJvkBNDUDgD6DJrRowLODc1FCtCVqI5erhDgA292mtb0CLjhytrdtKrTy3aZstq3oeiXtwX5qNCWyJj2EtCWBK1HAgvunZi5x3nbnxbVnuLUs3GZltr1pvfcDwX1Bs9MmZ01AxbtvdbXDxDZCJHQCc95vdrKttvOwuvXCO1WnwzTtdGZELHfnLPOp3KZCJv6zuHKmhviqNnxy3DoBZjYn1LsztnwCeHHytGVAxqYztHK#AqSXodC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239101_audios185645054" data-id="185645054_456239101_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239101_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c636816/v636816452/a63ca/7VrbaQdZAhI.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239101_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239101_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="200" onclick="audioplayer.switchTimeFormat(this, event);">3:20</div>
+          <div class="ai_label">
+            <span class="ai_title">Jane XØ - Love Me (Sunrise Mix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=oui1wdrMAe5cuZrvmhD5t3C3swD4lNv1r3qOnxzRlNrnmty5zMvWCJn0l1vYtduVstbNrgTcm1vQCZe1B3yZt24OoMner1bOy2PryxrHDJzkpuT5CLjZzcO2AdL1ng1QtdjUDefgmhiTwwjwme1AzvLTDvPiBtjwvurKExPPq3jHmY5ZBtnwtMvutNbTmfDtztvHng1SuwPZzwS3ztLkEM8/BMrToe5slY8Xz1jACM1VyxvlCfy2BLLKmwHZAurSntvLm196yZjXyMm#AqSZodC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239100_audios185645054" data-id="185645054_456239100_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239100_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c837738/v837738283/5828a/qnAdApp7COQ.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239100_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239100_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="157" onclick="audioplayer.switchTimeFormat(this, event);">2:37</div>
+          <div class="ai_label">
+            <span class="ai_title">Refeci &amp; Robbie Koex ft. Micah Martin - New World (B3nte Remix) </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=y3rUAfeZDgP0tgCOBfzuneHZDwS1muC2CJn4CePyns4ZqI9nDxnJnhHPl3vxzg0WrgnXv3DYDtLFDJyTvs49BMyVmdrjotjuuwK2ngO6mMW1zufTpODKm2zjCe44yuS2tOzSq3rfstnJEdjnmNHvD3vwrMT0zuH6uL8Wlw1rlOjRzuvYyuKTCJrOr1zRvvmOmuPdlKjfDMLVnen2mLf1s1nlCfC5uKLnwgGWB3qYmOHHBJLOu3vTBZfpzJHPCO90CdbHogvVwNr6Deve#AqS1otK">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239099_audios185645054" data-id="185645054_456239099_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239099_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c844723/v844723096/419b2/mErS2yIDybA.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239099_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239099_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="218" onclick="audioplayer.switchTimeFormat(this, event);">3:38</div>
+          <div class="ai_label">
+            <span class="ai_title">Post Malone - rockstar</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Будь в теме ✌ </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=sJDeEJi6zNjurfqZzhKWEtjVDK1Pyw5QCI9Wufjbmfu3zwrevJqWzOPOwM8Uz3rOzxnqoxbgyZeUBdfWt3rulwXwAxzPr3GOwenbltG3yKvLuxjKzxyXAZKVlMvMAg5OmwfYCf9OCZnvv2Xnx3Hnu19npun4udLmqMHfmhuWzhPwzNnIyvK3yMTHCc9vwdCYte5rlxLRC1vtoc1TreLnr2W5zgnop3f5qZLlwhD1mMrqvxuYwuO3AvfWvMTJC2v0l1vHmgTkuNr6zu1X#AqS1otu">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239098_audios185645054" data-id="185645054_456239098_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239098_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239098_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239098_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="213" onclick="audioplayer.switchTimeFormat(this, event);">3:33</div>
+          <div class="ai_label">
+            <span class="ai_title">Russian Club Mix 2017 #22 Track 08</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Dj Russian mix </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=ww81BtvOodm5zeyXzvj0EgXZC3bvwvL0m3LJyZLRDLr2rgnQnwW/zw1SDvrMlZDUlZrPC2S5EI1qtZzOmw5UDvrMndC5ruiZvdHOlNH0shjFCtLRlK05ufvylZmOu2LzqKrHBvjrmtLHExm1Cc5Hzuu5ug5hqvK3CfDuu2e6tJjPCdfsnwrgrLjLAwrZEJv2zY8TvZKWy3rsAO11CxHvwNqYCZfiyvveyLzzx2v2z1LfAMHdCKXbyJbnAY1uAfrutd1ivZjYAtLhBNP3Ca#AqS1otm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239097_audios185645054" data-id="185645054_456239097_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239097_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239097_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239097_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="221" onclick="audioplayer.switchTimeFormat(this, event);">3:41</div>
+          <div class="ai_label">
+            <span class="ai_title">Russian Club Mix 2017 #22 Track 09</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Dj Russian mix </span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=C19uCMG3lZHuB1qVDwjwmxvWqNq5Cxb1s2rfmxnKof9HANbPnh0UodvzD1r1sZfPDgmVntvtyOXrChmXrwTLwMD2sw45ogOVDdf4shDUtd9eyw4Om2W5mdzUngvWtNPTrM9cmOjHmwHrzgCXDxvXr3LVqNjkvNHmnwX4qMzXDhm2AxHSC2vLoe1ysxeZrJrSDuTgm2LlvL9WywnIChqWCZuUrZPzB29hwvm4mxDUuNjXlM85D3jvt1yVmY9HA3rTAZjiqJzMtMG3DvrvqZL2qK89Aur0qOzttvnQza#AqSZotC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239096_audios185645054" data-id="185645054_456239096_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239096_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c836520/v836520451/5e92b/_mggFyWbAPE.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239096_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239096_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="192" onclick="audioplayer.switchTimeFormat(this, event);">3:12</div>
+          <div class="ai_label">
+            <span class="ai_title">Kingston Town</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Alborosie</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AeWOmfnUyw5SAtrInx0VzgqOCZHXA1e1zJzlwdbFDJjSnMnVmxK/zw1ZDuzXuMXUl2z0otqVshvpCwzOCgzNwNzrndyXluDJu183lNGYEhjzDuvRlNi5DKGZlZnNuMe3uNrhze5bn2nnswTHnY5Houm3oeKTBKmTCfnZoMfVsNrdCdfpngrXCvrLCMrZvJv2B3aXA2uYm3rLzdn1zuyTnxrNCZfeDOfkEMjqCgDRDhfWmNbpCK9nmdrqC1v0CenMAtO1ohHQEgfxELfutq#AqSXody">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239095_audios185645054" data-id="185645054_456239095_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239095_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239095_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239095_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="307" onclick="audioplayer.switchTimeFormat(this, event);">5:07</div>
+          <div class="ai_label">
+            <span class="ai_title">Black Widow (JOKER REMIX)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Iggy Azalea ft. Rita Ora</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=odrYstbbl1nfnwfNt2GWywTzyJHvCKvqmujpzxbZoLD2EKLnCs8WDJnLy1nruha9zLD4nMn1DJiYEvmOveTIv3i2lK82nI9AotbMmwLlyKT4uMHLrKLTDdLPywfRzw5bAvfAEdDWr3bjBgPbCdfoDxn2ywGXzguWl3bOBwnQsvLus2uTCdjZDxvUzZyODfHgudD5CdLqmNPdCJ9zDg5MzOXwAOrsteiZB3nXs2qWA3aUnJfzlK1PDgLhBOnqwenzr2fcwKnbmJnoB2fRCW#AqSYoty">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239094_audios185645054" data-id="185645054_456239094_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239094_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c636816/v636816452/a3cc1/RKVoW70NZsM.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239094_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239094_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="201" onclick="audioplayer.switchTimeFormat(this, event);">3:21</div>
+          <div class="ai_label">
+            <span class="ai_title">Gangsta Gangsta ft. Baby Eazy-E (Original Mix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">DR. FRESCH</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AhaZBM9ZuJzYzuDdl2K1mxm4vxqVu3r1wJeUyKHHy1zHEhPbz29SmtjWDdaUptjJmNzwDNnVDvbHrtjTn3rurO8VAMrRDxn6EKr2AvzVD1yWsxvon24WmuPZv2PRCdnWqMfOyI85mZ9Rqvi1yOLKx1q2ofq4zwnpu2vqzs8Zx3P3utDWCgi5CZfvofL5C2O5nfDrr2vQneuOy3jzCLHjshvQvhzHzxrgutfHxZvIwva1qwTPvNv4CxnrreH2vteXzdjHCxiZuKfXn3HeAeK4nd0VrZbOlK5RzgmZyOy#AqS3mZe">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239093_audios185645054" data-id="185645054_456239093_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239093_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239093_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239093_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="187" onclick="audioplayer.switchTimeFormat(this, event);">3:07</div>
+          <div class="ai_label">
+            <span class="ai_title">С такими не дружат (Gredy Prod.)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">IZZY DEAD</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AfrHq2XKn2T4ntHQmc5Jm3j1Dc9KAhzlnf9mzJvwBM5ZDgLmB3PfvtnHmc1wCgmUn252rJzPDM9drJnHmK5xvezWuZztDuu6nNbvndLZngrUwJa4Ds5VxZGYCKviwdzcm3HPuY8VD3mOzdjJBwvHBgu3uwqXptGVm2rLodfPwgK4nZn2DhmZu1u4mOPVoxjOD2iWC2XsANCTsZHVtNa2ognqnZ9HDeHYx2vTuZD1BxiZudzztwvJotfZsMHnrtmYvufoAY9Ox2PRuKy5rgP1EgfnlZvNEtjWsJK4oa#AqSYmZa">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239092_audios185645054" data-id="185645054_456239092_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239092_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239092_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239092_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="8039" onclick="audioplayer.switchTimeFormat(this, event);">2:13:59</div>
+          <div class="ai_label">
+            <span class="ai_title">Live@Volga River Session (Ulyanovsk) 19.08.2017</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Sergey Kutsuev</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=zZbpnwDsyZK6nYOTn2q3m3vvqujmuLC5otD2ChuUsevWztr0DwvrAu5OyvrIngzOwervuY5HueSZtwrSC3jQzNjVAezLxOyZudvJqtn2m3G1vg5zCZDjmZbWEuSXAg5mmtjZrdHYzJn1vtf5u3HunNf6ptL1D2eWmK5KmMm5CKP4qwHVys9eowTfCc9eyJq2CvPpCfLqCZfynenTs2rkruq5zKXgpOHJntnvrJr1uOv5qY5RofjOCdqVELHLC2fRl3PHwve2nNr5zweT#AqSZntu">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239091_audios185645054" data-id="185645054_456239091_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239091_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c638719/v638719553/598b2/8xW1BoxYG-A.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239091_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239091_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="183" onclick="audioplayer.switchTimeFormat(this, event);">3:03</div>
+          <div class="ai_label">
+            <span class="ai_title">The Future (Fytch Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">San Holo &amp; James Vincent McMorrow</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=ngq4EwG4D3u6qOfQzvaTAdrkC1K5xO9Ioez3B2nvDJDTrgmYnOu/zwOYDtjQzdvUl2vPnfiTr1bdzZDODhPKnJbungzzD3PplvDvlNHJnNjuyxrRlMi5ngzIlZnqCemZrwCYB1Dum1PyqvLOuY5HoduWvtfStOi2CeOWv2fVyO8XCdfkyZbvueXLnNrZwJf2vI9lBtr1wNqXqxz1A2TLCNr0COC1DtbqyO1gDxHzEvmVx1HgCKHTmZj3mY1ZqMi4vt1tmvfZyZjxwxDHoq#AqSYode">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239090_audios185645054" data-id="185645054_456239090_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239090_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239090_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239090_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="222" onclick="audioplayer.switchTimeFormat(this, event);">3:42</div>
+          <div class="ai_label">
+            <span class="ai_title">Bmw M3 E30 Drift , Burnout 4</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist"> Vagif Channel OST</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AhnZzKDbBwnZDejunw5ywNKVA2OXl3n6CfLOAhKZqZzHDs9VqKX6uZe2z2COmwfWAwflDg5Pu1bPzsO5zvrqCwGYDtrvDxH1AwTKyMuVyuLvvs4UztyOEs9PoxLYwufTCOfotZHgodrjxZLWofb5DLPYoePvyLfWxZjtDg1cuY1pCdnPqum2lMXZoxiZlx04CZyOmd0OAgjyBdq/nMvZEdOOCM9Hu2rHCdm5nM1grOy5BhPUyKXqC1K5uMjYzdyOnLPSoxnIzhDzvZjeC3zMAwznAhvkAMHUyuHulOu#AqSXmZK">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239089_audios185645054" data-id="185645054_456239089_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239089_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239089_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239089_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="254" onclick="audioplayer.switchTimeFormat(this, event);">4:14</div>
+          <div class="ai_label">
+            <span class="ai_title">Holy Molly [BassBoosted by Arba]</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Holy Molly</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=yJ9WwtrJltbIzdi4xY5krMWWrOvny3u5lwrLufqUmv9goxDFBgjOuJfNEfvStJHOANnkq3P2mZm3zwnYwxLRzhjqlNDuwezfwdb4CfzQsMT1yOG1xOiZutreB3beAg5RzwrOmNrkqZmTme9mvhHlD1jupxvHmJnyCLHZvJ0VnOvctxbPywX4whbLCc9ivfP1C2rSEJrJCOjfnwvTxZrdmK5QDM9ozenVutn2r1zYwgLADhvWl10WDdvvltzNC2e5sc9Hlw1KqxrKzuCW#AqS2mdm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239088_audios185645054" data-id="185645054_456239088_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239088_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c836537/v836537446/39c3c/PVmVOu4rzis.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239088_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239088_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="215" onclick="audioplayer.switchTimeFormat(this, event);">3:35</div>
+          <div class="ai_label">
+            <span class="ai_title">♔ BassBoosted by ZENDER ♔</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">BASSBOOSTED</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=CNbdyNP1AfnNDO4UwgPhoc4ZA3v5lZbICMeXtMHtq1vrDeTlovHRowTOEs1rBtuVmc5zs1GOnK52qJjisezumwOTnfbOAdaXntr6u1CYzxbrBwzurdj2zZjdBKyXl2vomZHUvf0TsJnVtLjmr3HWweLupuDgEgfrzJKWytP0Auv3zuDHDtvYDwX2Cc90whLxBKnstefxCO4XyNrTuKTVAezjngfYpY14CJf3wuvKC3vbA3m3zc1zB2m1BwHpztqXCfbHnLrnr3rRzs1s#AqSXote">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239087_audios185645054" data-id="185645054_456239087_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239087_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c836439/v836439451/3ab24/SbG8wKiPn7I.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239087_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239087_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="260" onclick="audioplayer.switchTimeFormat(this, event);">4:20</div>
+          <div class="ai_label">
+            <span class="ai_title">Fade NCS Release]BassBoosted by Arba</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Alan Walker</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AezFm2LOs3nFEJnxlxiOwxaXywrKtffWu1DgnO9xtwT4ve9uBJyWl1GWoxa5tMjAx2T4ou0ZztKWEuLTnZ9cB3fYyI5ZuL92vs9YvJi6tJfUDNruAJDKvufOrI5YtfD5rOH5v1DYys83ttDJDuDKr3jdndfqxZnMBOH0zhPRChbmmgSWrfDdyMyZyOj2B2v1q1LJzhD1zxfxyJfnDhaXs2Dlu1jAy2XLBZKWBMvOrhy2pxzOwtnfAs5ZAY9TCOXqEgvkEf92mMXOBfvPBG#AqS4ndy">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239086_audios185645054" data-id="185645054_456239086_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239086_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c639118/v639118448/2ed0f/CvrfgVxKoHs.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239086_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239086_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="174" onclick="audioplayer.switchTimeFormat(this, event);">2:54</div>
+          <div class="ai_label">
+            <span class="ai_title">Do It (Deepper Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Malumup</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=ow4OCZvfA3H1D2LWnKTHm2r1vZnLl2f4mtbLmxPfmJL2DuOXotfTvdHdBufkAhe4DhH2m202vhvVB2v5rtaZzwLuAtzHDfyWmtfHl3qUl1bjt3bJBu9izuTYyJbOBMnPse1IDhbgzfDFpOLOus9FlMDYDhPgzgGXwg1AuKv1sLeTm3zeyxqODdfsAxzHwfLoy2zXAJrkCgnjoJfnx1nzwxbRl3m4yxi1t2qWuw9HvtjNC2ryBvzhAJfvCtfcEdzLzg5ZvJOVqs1VzZvKrO4UBfvAotK5zxnoEeHkmZq#AqSYmtu">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239085_audios185645054" data-id="185645054_456239085_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239085_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239085_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239085_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="375" onclick="audioplayer.switchTimeFormat(this, event);">6:15</div>
+          <div class="ai_label">
+            <span class="ai_title">Ресницы</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Malumup</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=EvrKmxzXtxrICO52BMDcrwfMug8ZCxiZvvHXl2vtEfC3B2SZthz3tZqVl2u5AtiUCZHOnNzvENGUzJDdnMnny3iOEtbJvOrUwtzgqMv3mtHHlNP2sdDZAdrUsvDoAg5lmwncAfHfBxrbnhqYshr1CMfRpu1zx3jnxO1PDZPbzKjzmJbtDw9dDM4TCc9cEgfREJvQEwO3se56yvDTqvfMCuTQmLG4pZCZv1zJDvzRmuLtz3mTrMfVCf02DdjWztDtxODHEhbwwhrzzvj2#AqS5mJC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239084_audios185645054" data-id="185645054_456239084_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239084_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239084_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239084_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="139" onclick="audioplayer.switchTimeFormat(this, event);">2:19</div>
+          <div class="ai_label">
+            <span class="ai_title">Chicki Chicki тусики тусики</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Malumup</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=uI1LyvzfvOfpus85rZ9XCJv2C3PMmwzhmNfqzg9Hqtz0BJbRrtGVnJDYC21PyxaUEhrWu1zOrKTKyvjundvnmxv1Awf1yMLQvc1WzvLhBLG3wxm2uI93A1n6AdnRr2XJBKv0m2KUrJzgDhnHmY9Motrnz3LFwenKmNHqBJv1Derinu1OtvuTrtyZsMv6ohzfvJD6rJjWmMTwvt15mgfrDLzTyKPOmxD3nvzVDwrIBf8WBOjqA1rOl2eUyNrumtDrzLHnD1u1n2XJy1DNzNLuExCVmwvKvtz6vMe6#AqS5mJK">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239083_audios185645054" data-id="185645054_456239083_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239083_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239083_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239083_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="192" onclick="audioplayer.switchTimeFormat(this, event);">3:12</div>
+          <div class="ai_label">
+            <span class="ai_title">transbit</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Malumup</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=yOnAnLf0DgD0AePymePVyOzZyKDZmNuYCKLrmwvFog5JEI9VC3m1n25Vl1bqmdztyOPIreLHzdKTneuTDxy9ztKVyZn3Agj1veW2nKO6zur2Ew1TpOPPnZvVCfblnxzfz2TNvhuZAtnkAeXToxG4mhHQy3u1zwrzytu1DhrLCeHoDe5lDxDZsemVys1dswfJmMrKlJDOAZr4lJaTDvq4svrMCfv2t211CMLvuu0XuvjwEdvOzZf6lNHrzLjqzvzOstnHvhiWD3rsC1b3#AqS3odC">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239082_audios185645054" data-id="185645054_456239082_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239082_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c836520/v836520451/511da/Ziyy-bXMCOo.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239082_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239082_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="222" onclick="audioplayer.switchTimeFormat(this, event);">3:42</div>
+          <div class="ai_label">
+            <span class="ai_title">PART 1 | TRACK 5</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">♔MUSIC DEALER♔</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=CwXjne9kCLf1vY9MtwvtvdrqngvPwMTZDM95nJLLBxvpq3bQAde5zc5Yr3vPBs5rugLrBxK1Dvvwq3mXmLrszwHHB2fqyvi/mxnjsgr2EJrLl3rOlL9FthbwqNrRvxrWneL2pxPbA2DclwPmyuPUtxzxr2ngoe9RC3LvBKWXqMHMzZvLsNbpx3HTtNDZD2jSyOO4oxGWCMvNzxDPudu4nfeZoxG5rujFBNuOsdHHmervl3u3mdKZAerYCffvmLiVs3a6sO0Zqw9vnJa#AqS4ndy">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239081_audios185645054" data-id="185645054_456239081_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239081_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c604720/v604720447/8da54/s5HlBDuxWds.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239081_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239081_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="136" onclick="audioplayer.switchTimeFormat(this, event);">2:16</div>
+          <div class="ai_label">
+            <span class="ai_title">Bounce</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Элджей</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=CZLvx2WXAMWXAdfOngvpsOvACgyOqvDfCtqZCg9ZCNPtluOVDguXvM1RCtzJsxPKB2KVvdnOzwqOl2ztAtDlmIO1pvHfvgTWB2vOvKfNwtnPlLvNsxv2C2GVvhqTuZC5C1vSDg9ACNrUmKOXDdDzlLjyzM5el25VwxHXouH1Axy/xO1Xm3qZudf0l3vwCgvzy3iZsMz5sxfHrgzToJjmuhHHnhmYDNi2ChvWrLb0rZnHsZz2DvyYsMn5sgTIuxPvsxr6zdHKDtzLtMC2qOf2DMe5z2qUsZm2Ce5Tntm#AqS4mJu">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239080_audios185645054" data-id="185645054_456239080_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239080_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239080_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239080_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="247" onclick="audioplayer.switchTimeFormat(this, event);">4:07</div>
+          <div class="ai_label">
+            <span class="ai_title">Bad Queens (DISKORD Remix)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Apashe</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=l1P2uM1Ps2HonNDlouDMpxbxtJLNC1PSCLG5shzzyJHlmgHOyZGOrKjZzMy2nM9vlNLOCZPKC3zivw1Tzw5Uv2fOlwfPyNjgnduVrw8TB3HYnJjIm3rtmgTSDMu5y3Lpq3z1shzMDNaXtLK/mc9equDTCNvtDL9qwwvYmZjVyMLzCurKzej4zge4ChvbDwn3rv0WtgzguuCTDhLOnMuYBfPWENbXlxPxx1yUnfu1vxP2yNHzzwLLtfbAB1PbAdzYl2TQy2vrr3CYos5i#AqSXmJi">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239079_audios185645054" data-id="185645054_456239079_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239079_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style="background-image:url(https://pp.userapi.com/c841623/v841623450/f024/JKEpA2kd3jA.jpg)"><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239079_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239079_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="264" onclick="audioplayer.switchTimeFormat(this, event);">4:24</div>
+          <div class="ai_label">
+            <span class="ai_title">Bass Inside</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">AC Slater</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Ddjtlxvox3bRnKH5mLKWrNzFsJzsCgqTqOHYntLszt9ZBdD2mgTntNPvzxjusJeVEgfHChLPDgLwCOuZBY9hnZCZoNHwAOvOzNGVDgPHyur2pwHcm1bMCKq2DeXHA1aOyOrUlMfezNz1zNHnEvrTEuWWu2XrBu5ZEgDkBxb3ohzXuY5jCOnkn254Ec9uwdqWzhj4ruP5CLHOmZuOB3nsq3y1Af0WueDTCgHorgfiBeXyDNnfCfzOvNHQngrJCeroD3bLmY42yZnhzKu#AqS2mta">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239078_audios185645054" data-id="185645054_456239078_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239078_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239078_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239078_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="187" onclick="audioplayer.switchTimeFormat(this, event);">3:07</div>
+          <div class="ai_label">
+            <span class="ai_title">По катакомбам</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">FDA</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=Afvmtu5emNGYs3r4pwqTDevWzMDwwgXfy2Dmse94mJGVEK9OvMSZv1v4zcOOofaWEgXLBKrLBhKWudDms2LQzxvLwhH3ytvuAtuYDZG3Dg8TAxvSvMLKotnvowvuogeZC3PVDeHLntfOnY8OvKXUlKTkDxbul25RvM9REgv1tvu/y2jnm3zowJfuBsOOvhbot1DLrZbuwvbqDMnTueLYoMCOl3mXvNjWDeTcyZD6m2eOC3jHrwX4y294y1mXq3uUDwXZvueVyvDuuK5rwJCWDKLKwc5ondCVDfe1mhm#AqS4mJy">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239077_audios185645054" data-id="185645054_456239077_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239077_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239077_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239077_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="423" onclick="audioplayer.switchTimeFormat(this, event);">7:03</div>
+          <div class="ai_label">
+            <span class="ai_title">Oceans (Hillsong United Cover)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Chapel Music</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AdqWzLrUyZKOAwXqCg55DxaXCY9OmMuXwJHnowvVCeH2ouOVvv8OnNq2wg4XnLuYDdv1yxvHAMT6tJveEdLLngPyyvvLwtLZtML2uxbWmY5IAw4VCe0UA2nPA2rrpZvLCKj1wvnLveXOCejVrtqTC2PvzNj6BeP6DtH2CKeYvJvjuMjwAZK6rJHiCY9flKDFB2H2odDPzwj4mZbPmwjHChnOptGWDgnru1D2sNnsogGWEwvjvOnlBtD4mevFEhbqEKSWww1YBtzMtxjZ#AqS3nZm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239076_audios185645054" data-id="185645054_456239076_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239076_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239076_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239076_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="172" onclick="audioplayer.switchTimeFormat(this, event);">2:52</div>
+          <div class="ai_label">
+            <span class="ai_title">Если Чё Я Баха  (OST &quot;Закон Каменных Джунглей&quot;)</span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Jah Khalib</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=l2DfAfjIrgHsqxy2mwvLptDJs2vyCe1KrOy5n3zYngDlBLvODtfptJDZufzKrg84lLneCZ0YC3zQAMOTAKTUwMeZENbPwNjSnhmVBNGTvhHiownFyNrMzurFwgviq2PQmwzdDenWqNa3m2C/os9jB2TSr3u3n19FnwvgmZfIqunxsxD1CZvVzgfFCgu4DuPsrw8ZBdjbAxjADdDOzKG3z2fTCNbPsOfSBJaUow9Jwv9Lvc1VnhjUAMLinO9YmwjYl2TKy2vRBufLoc5Q#AqSXmJi">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239075_audios185645054" data-id="185645054_456239075_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239075_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239075_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239075_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="336" onclick="audioplayer.switchTimeFormat(this, event);">5:36</div>
+          <div class="ai_label">
+            <span class="ai_title">Sombras </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">Marcio Lama</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgzZnOnOmNDTsMyYmxG5l3e4rfHfCMv4uZvHsw1LmOzJmg41nJzoDgj2ts8Xts9HttjKCfjNzfaUBtf1zgLLzs5LrNngwdjLnhfOyLa4D2uVDezYBZvLsOfZywrSBuHfmw5PmweYnfLrlJrZm3vHEv09shDSDtC3AZrWEuLJuer1ns15lZnFBwLHuuqZCY9dEhLgDvrfCuy/vwvbmZbUrfL2Ddi5mg1ZvZrKnwfZwxjRnfj1CJDxmhngA2qZnw8TCOzWmuDOy3nYEufKB2HqDOHxmZKWA3b2vwe6#AqSOntm">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    <div id="audio185645054_456239074_audios185645054" data-id="185645054_456239074_audios185645054" class="audio_item ai_has_btn" onclick="audioplayer.playPause(event, '185645054_456239074_audios185645054', true)">
+      <div class="ai_info">
+        <div class="ai_play" style=""><i class="i_play"></i></div>
+        <div class="ai_menu_wrap">
+            <i class="i_pointer"></i>
+            <a href="#" class="ai_menu_toggle_button" onclick="ActionMenu.toggleMenu(event, this);"></a>
+            <div class="ai_menu wi_actions" id="ai_menu_185645054_456239074_audios185645054">
+                 <div class="ai_del wia_item" onclick="audioplayer.del('185645054_456239074_audios185645054', event);">Удалить аудиозапись</div>
+            </div>
+        </div>
+        <div class="ai_body">
+          <div class="ai_dur" data-dur="202" onclick="audioplayer.switchTimeFormat(this, event);">3:22</div>
+          <div class="ai_label">
+            <span class="ai_title">Make Ya Booty </span>
+            <span class="divider"> &ndash; </span>
+            <span class="ai_artist">SK3IVO</span>
+          </div>
+          <input type="hidden" value="https://m.vk.com/mp3/audio_api_unavailable.mp3?extra=AgrYzLbVrKeVvJj1CZrvoe0/wgvWzMmOzgrFtJvOqtzJnxncoxnHBxfnAMSOsc84DdnMEMLhB1D4qLvKmLqXsu1LzMq3sZLZx2e1yLvUrL9tvfjrndDzuZfVyNnxsI9zCda4lZjOv1jiDgTkzc8TlJDHmMyWBtj3DvnYmLzurhyZEhuZzdGVsvLTsxr2zxjpChDZmO5Yy2C2pvjsowrPmNC2mY1jnZjRxZ0Yzu9Lt3zdDuW3ohPWyxvRDguZmtnVmJjiCw4Ultr0lvnYnJHTreu2rZK3ztCXvZqUwNC#AqS3ote">
+        </div>
+      </div>
+      <div class="ai_controls">
+        <table class="row_table">
+          <tr>
+            <td class="aic_progress_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setPosition(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_load_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="aic_volume_wrap">
+              <div class="aic_line" onmousedown="audioplayer.setVolume(this, event);" onclick="cancelEvent(event);">
+                <div class="aic_ln aic_back_line" onclick="cancelEvent(event);"></div>
+                <div class="aic_ln aic_pl_wrap" onclick="cancelEvent(event);">
+                  <div class="aic_ln aic_progress_line" onclick="cancelEvent(event);">
+                    <div class="aic_slider" onclick="cancelEvent(event);"></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div><div class="pagination"><a class="pg_link pg_link_sel" href="/audio?offset=0">1</a><a class="pg_link" href="/audio?offset=50">2</a><a class="pg_link" href="/audio?offset=100">3</a><a class="pg_link" href="/audio?offset=600">&raquo;</a></div></div></div></div></div>
+          <div class="basis__footer mfoot" id="mfoot"><div class="pfoot">
+  <ul id="footer_menu" class="footer_menu">
+
+<li class="fm_row"><a class="fm_item" href="/">На главную</a></li>
+<li class="fm_row"><a id="fv_link" class="fm_item fv_link" href="/fv?to=https%3A%2F%2Fvk.com%2Faudio%3Fid%3D185645054%26_fm%3D1%26_fm2%3D1">Полная версия</a></li>
+<li class="fm_row"><a class="fm_item fm_logout_link" href="https://login.vk.com/?act=logout_mobile&hash=8c7b5d551e9309c9d8&_origin=https%3A%2F%2Fm.vk.com">Выход</a></li>
+  </ul>
+
+</div></div>
+
+          <div class="_cntrs" style="height:0;overflow:hidden;">
+      <img width="1" height="1" src="//counter.yadro.ru/hit?uhttps%3A%2F%2Fm.vk.com%2Faudio%3Fid%3D185645054;r;89818104" alt="" align="left" />
+      <img width="1" height="1" src="//sb.scorecardresearch.com/p?c1=2&c2=13765216&c3=&c4=https%3A%2F%2Fm.vk.com%2Faudio%3Fid%3D185645054&c5=&c9=&c15=&cv=2.0&cj=1&rn=89818104" alt="" align="left" />
+      <img width="1" height="1" src="https://r3.mail.ru/k?vk_id=185645054&src=mobile&data=" />
+      <img src="//top-fwz1.mail.ru/counter?id=2579437;pid=185645054;r=" style="border:0;" height="1" width="1" />
+    </div>
+    </div>
+        </div>
+
+      </div>
+    </div>
+
+        <script type="text/javascript">
+<!--
+parent&&parent!=window&&(document.getElementsByTagName('body')[0].innerHTML='');
+//-->
+</script>
+        <div id="vk_utils"></div>
+        <div id="z"></div>
+        <div id="vk_bottom"></div>
+            <div class="mediaQueriesStats"></div>
+      </body>
+    </html>

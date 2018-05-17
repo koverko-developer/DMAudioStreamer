@@ -14,10 +14,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,13 +30,19 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+import com.thin.downloadmanager.util.Log;
 
+import java.lang.reflect.Type;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import dm.audiostreamer.MediaMetaData;
+import dm.audiostreamer.TypeAudio;
 import dm.audiostreamerdemo.R;
+import dm.audiostreamerdemo.SearchActivity;
+import dm.audiostreamerdemo.activity.MusicActivity;
 
 public class AdapterMusic extends BaseAdapter {
     private List<MediaMetaData> musicList;
@@ -47,10 +55,14 @@ public class AdapterMusic extends BaseAdapter {
 
     private ColorStateList colorPlay;
     private ColorStateList colorPause;
+    private TypeAudio type;
+    MusicActivity activity;
+    SearchActivity searchActivity;
 
-    public AdapterMusic(Context context, List<MediaMetaData> authors) {
+    public AdapterMusic(Context context, List<MediaMetaData> authors, TypeAudio type) {
         this.musicList = authors;
         this.mContext = context;
+        this.type = type;
         this.inflate = LayoutInflater.from(context);
         this.colorPlay = ColorStateList.valueOf(context.getResources().getColor(R.color.md_black_1000));
         this.colorPause = ColorStateList.valueOf(context.getResources().getColor(R.color.md_blue_grey_500_75));
@@ -72,18 +84,25 @@ public class AdapterMusic extends BaseAdapter {
 
     public void notifyPlayState(MediaMetaData metaData) {
         if (this.musicList != null && metaData != null) {
-            int index = this.musicList.indexOf(metaData);
-            //TODO SOMETIME INDEX RETURN -1 THOUGH THE OBJECT PRESENT IN THIS LIST
-            if (index == -1) {
-                for (int i = 0; i < this.musicList.size(); i++) {
-                    if (this.musicList.get(i).getMediaId().equalsIgnoreCase(metaData.getMediaId())) {
-                        index = i;
-                        break;
-                    }
-                }
+            int index = Integer.parseInt(metaData.getMediaId());
+//            int index = this.musicList.indexOf(metaData);
+//            //TODO SOMETIME INDEX RETURN -1 THOUGH THE OBJECT PRESENT IN THIS LIST
+//            if (index == -1) {
+//                for (int i = 0; i < this.musicList.size(); i++) {
+//                    if (this.musicList.get(i).getMediaId().equalsIgnoreCase(metaData.getMediaId())) {
+//                        index = i;
+//                        break;
+//                    }
+//                }
+//            }
+            for (MediaMetaData m: this.musicList
+                 ) {
+                m.setPlayState(PlaybackStateCompat.STATE_NONE);
             }
             if (index > 0 && index < this.musicList.size()) {
-                this.musicList.set(index, metaData);
+                if(!(this.musicList.get(index).getPlayState() == PlaybackStateCompat.ACTION_PLAY))
+                    this.musicList.get(index).setPlayState((int) PlaybackStateCompat.ACTION_PLAY);
+                else this.musicList.get(index).setPlayState((int) PlaybackStateCompat.ACTION_PAUSE);
             }
         }
         notifyDataSetChanged();
@@ -107,7 +126,11 @@ public class AdapterMusic extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup viewGroup) {
-
+        try{
+            activity = (MusicActivity) mContext;
+        }catch (Exception e){
+            searchActivity = (SearchActivity) mContext;
+        }
         ViewHolder mViewHolder;
         if (convertView == null) {
             mViewHolder = new ViewHolder();
@@ -116,10 +139,34 @@ public class AdapterMusic extends BaseAdapter {
             mViewHolder.playState = (ImageView) convertView.findViewById(R.id.img_playState);
             mViewHolder.mediaTitle = (TextView) convertView.findViewById(R.id.text_mediaTitle);
             mViewHolder.MediaDesc = (TextView) convertView.findViewById(R.id.text_mediaDesc);
+            mViewHolder.img_more = (ImageView) convertView.findViewById(R.id.img_moreicon);
             convertView.setTag(mViewHolder);
         } else {
             mViewHolder = (ViewHolder) convertView.getTag();
         }
+
+        if(mViewHolder.img_more != null){
+            mViewHolder.img_more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    switch (type){
+                        case Cache:
+                            showPopupMenuCache(view);
+                            Log.e("adapter type audio: ", "cashe");
+                            break;
+                        case MyMusic:
+                            showPopupMenuMy(view);
+                            Log.e("adapter type audio: ", "mymusic");
+                            break;
+                        case AllCategory:
+                            showPopupMenuAll(view);
+                            Log.e("adapter type audio: ", "all");
+                            break;
+                    }
+                }
+            });
+        }
+
         MediaMetaData media = musicList.get(position);
 
         mViewHolder.mediaTitle.setText(media.getMediaTitle());
@@ -132,7 +179,7 @@ public class AdapterMusic extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 if (listItemListener != null) {
-                    listItemListener.onItemClickListener(musicList.get(position));
+                    listItemListener.onItemClickListener(musicList.get(position), position);
                 }
             }
         });
@@ -145,6 +192,7 @@ public class AdapterMusic extends BaseAdapter {
         public ImageView playState;
         public TextView mediaTitle;
         public TextView MediaDesc;
+        public ImageView img_more;
     }
 
 
@@ -218,6 +266,108 @@ public class AdapterMusic extends BaseAdapter {
     public ListItemListener listItemListener;
 
     public interface ListItemListener {
-        void onItemClickListener(MediaMetaData media);
+        void onItemClickListener(MediaMetaData media, int position);
     }
+
+    private void showPopupMenuCache(View v) {
+        PopupMenu popupMenu = new PopupMenu(mContext, v);
+        popupMenu.inflate(R.menu.popup_cache); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu1:
+                                Log.e("click menu:", "delete from cache");
+                                return true;
+                            case R.id.menu2:
+                                Log.e("click menu:", "download from cache");
+                                return true;
+//                            case R.id.menu3:
+//                                Log.e("click menu:", "add to playlist");
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.show();
+    }
+
+    private void showPopupMenuMy(View v) {
+        PopupMenu popupMenu = new PopupMenu(mContext, v);
+        popupMenu.inflate(R.menu.popup_my); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu1:
+                                Log.e("click menu:", "save to cache");
+                                return true;
+                            case R.id.menu2:
+                                Log.e("click menu:", "download");
+                                return true;
+                            case R.id.menu3:
+                                Log.e("click menu:", "delete from playlist");
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.show();
+    }
+    private void showPopupMenuAll(View v) {
+        PopupMenu popupMenu = new PopupMenu(mContext, v);
+        popupMenu.inflate(R.menu.popup_all); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu1:
+                                Log.e("click menu:", "save to cache");
+                                return true;
+                            case R.id.menu2:
+                                Log.e("click menu:", "download");
+                                return true;
+                            case R.id.menu3:
+                                Log.e("click menu:", "add to playlist");
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.show();
+    }
+
 }

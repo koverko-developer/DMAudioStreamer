@@ -5,23 +5,42 @@
  */
 package dm.audiostreamerdemo.activity;
 
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.format.DateUtils;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.nononsenseapps.filepicker.FilePickerActivity;
+import com.nononsenseapps.filepicker.Utils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -29,30 +48,53 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
+import org.json.JSONObject;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import dm.audiostreamer.AudioStreamingManager;
 import dm.audiostreamer.CurrentSessionCallback;
 import dm.audiostreamer.Logger;
 import dm.audiostreamer.MediaMetaData;
+import dm.audiostreamer.TypeAudio;
+import dm.audiostreamerdemo.AudioStreamerApplication;
 import dm.audiostreamerdemo.R;
+import dm.audiostreamerdemo.SearchActivity;
 import dm.audiostreamerdemo.adapter.AdapterMusic;
+import dm.audiostreamerdemo.data.Prefs;
+import dm.audiostreamerdemo.data.VKMusic;
 import dm.audiostreamerdemo.network.MusicBrowser;
 import dm.audiostreamerdemo.network.MusicLoaderListener;
+import dm.audiostreamerdemo.network.NotificationTask;
 import dm.audiostreamerdemo.slidinguppanel.SlidingUpPanelLayout;
 import dm.audiostreamerdemo.widgets.LineProgress;
 import dm.audiostreamerdemo.widgets.PlayPauseView;
 import dm.audiostreamerdemo.widgets.Slider;
+import lib.folderpicker.FolderPicker;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MusicActivity extends AppCompatActivity implements CurrentSessionCallback, View.OnClickListener, Slider.OnValueChangedListener {
 
     private static final String TAG = MusicActivity.class.getSimpleName();
+    private static final int REQUEST_CODE = 201;
+    private static final int FILE_CODE = 203;
     private Context context;
     private ListView musicList;
     private AdapterMusic adapterMusic;
+    private static final int SDCARD_PERMISSION = 1,
+            FOLDER_PICKER_CODE = 2,
+            FILE_PICKER_CODE = 3;
+
+    ImageView imgSearch;
 
     private PlayPauseView btn_play;
     private ImageView image_songAlbumArt;
@@ -85,28 +127,100 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     private MediaMetaData currentSong;
     private List<MediaMetaData> listOfSongs = new ArrayList<MediaMetaData>();
 
+    int id = 0;
+    Prefs prefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
         this.context = MusicActivity.this;
+        prefs = new Prefs(context);
+        spinnerInit();
         configAudioStreamer();
         uiInitialization();
-        loadMusicData();
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (isExpand) {
-            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-        } else {
-            super.onBackPressed();
-            overridePendingTransition(0, 0);
-            finish();
+        if(prefs.getCookie().length()>2){
+            updateCookie();
+            //getPopular();
+            //getNews();
+            //getSpecial();
+            //loadMusicData();
         }
+        else initWV();
+
     }
 
+    private void spinnerInit(){
+        String colors[] = {"Мои аудиозаписи","Новинки","Популярное","Специально для Вас","Ваши группы","КЭШ", "Выбор папки"};
+
+// Selection of the spinner
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_menu);
+
+
+// Application of the Array to the Spinner
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, colors);
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line); // The drop down view
+        spinner.setAdapter(spinnerArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 0) getMyAudio(0);
+                else if (i==5){
+                    getCache();
+
+                }else if(i == 6) {
+                    pickFolder();
+                }else {
+                    Intent intent = new Intent(MusicActivity.this, SearchActivity.class);
+                    intent.putExtra("type", i);
+                    startActivityForResult(intent, REQUEST_CODE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+//    @Override
+//    public void onBackPressed() {
+//        if (isExpand) {
+//            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+//        } else {
+//
+//            super.onBackPressed();
+//            overridePendingTransition(0, 0);
+//            finish();
+//        }
+//    }
+
+    private void showSelectType(){
+
+
+
+    }
+
+    void pickFolder() {
+        Intent i = new Intent(context, FilePickerActivity.class);
+        // This works if you defined the intent filter
+        // Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+
+        // Set these depending on your use case. These are the defaults.
+        i.putExtra(FilePickerActivity.EXTRA_ALLOW_MULTIPLE, false);
+        i.putExtra(FilePickerActivity.EXTRA_MODE,FilePickerActivity.MODE_DIR);
+        // Configure initial directory by specifying a String.
+        // You could specify a String like "/storage/emulated/0/", but that can
+        // dangerous. Always use Android's API calls to get paths to the SD-card or
+        // internal memory.
+        String s = Environment.getExternalStorageDirectory().getPath();
+        Log.e(TAG, "start folder: " +s);
+        i.putExtra(FilePickerActivity.EXTRA_START_PATH, Environment.getExternalStorageState());
+
+        startActivityForResult(i, FILE_CODE);
+    }
 
     @Override
     public void onStart() {
@@ -196,6 +310,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         time_progress_slide.setText(timeString);
         lineProgress.setLineProgress(0);
         audioPg.setValue(0);
+
     }
 
     @Override
@@ -208,6 +323,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     public void playCurrent(int indexP, MediaMetaData currentAudio) {
         showMediaInfo(currentAudio);
         notifyAdapter(currentAudio);
+        Log.e(TAG, "this is play music");
     }
 
     @Override
@@ -252,14 +368,16 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             streamingManager.onPause();
             ((PlayPauseView) v).Pause();
         } else {
-            streamingManager.onPlay(currentSong);
+            streamingManager.onResume();
+            //streamingManager.onPlay(currentSong);
             ((PlayPauseView) v).Play();
         }
     }
 
     private void playSong(MediaMetaData media) {
-        if (streamingManager != null) {
+        if (streamingManager != null && !streamingManager.isLoading) {
             streamingManager.onPlay(media);
+
             showMediaInfo(media);
         }
     }
@@ -287,10 +405,20 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     }
 
     private void uiInitialization() {
+//
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        toolbar.setTitle(getString(R.string.app_name));
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getString(R.string.app_name));
+        imgSearch = (ImageView) findViewById(R.id.img_search);
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicActivity.this, SearchActivity.class);
+                intent.putExtra("type", 0);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
 
         btn_play = (PlayPauseView) findViewById(R.id.btn_play);
         image_songAlbumArtBlur = (ImageView) findViewById(R.id.image_songAlbumArtBlur);
@@ -377,11 +505,16 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         });
 
         musicList = (ListView) findViewById(R.id.musicList);
-        adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>());
+        adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>(), TypeAudio.MyMusic);
         adapterMusic.setListItemListener(new AdapterMusic.ListItemListener() {
             @Override
-            public void onItemClickListener(MediaMetaData media) {
-                playSong(media);
+            public void onItemClickListener(MediaMetaData media, int position) {
+                Log.e("STATE current music ", String.valueOf(media.getPlayState()));
+                MediaMetaData media1 = listOfSongs.get(position);
+                if(media1.getPlayState() == 2) streamingManager.onResume();
+                else playSong(media1);
+
+
             }
         });
         musicList.setAdapter(adapterMusic);
@@ -435,9 +568,9 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         txt_bottom_SongName.setText(metaData.getMediaTitle());
         txt_bottom_SongAlb.setText(metaData.getMediaArtist());
 
-        imageLoader.displayImage(metaData.getMediaArt(), image_songAlbumArtBlur, options, animateFirstListener);
-        imageLoader.displayImage(metaData.getMediaArt(), image_songAlbumArt, options, animateFirstListener);
-        imageLoader.displayImage(metaData.getMediaArt(), img_bottom_albArt, options, animateFirstListener);
+        imageLoader.displayImage("http://i.ebayimg.com/00/s/MTAxMFgxMDEw/z/qJQAAOSwo4pYgDxn/$_57.JPG?set_id=8800005007", image_songAlbumArtBlur, options, animateFirstListener);
+        imageLoader.displayImage("http://blog.aport.ru/wp-content/uploads/2016/02/apple-music-android-logo.jpg", image_songAlbumArt, options, animateFirstListener);
+        imageLoader.displayImage("http://blog.aport.ru/wp-content/uploads/2016/02/apple-music-android-logo.jpg", img_bottom_albArt, options, animateFirstListener);
     }
 
     private static class AnimateFirstDisplayListener extends SimpleImageLoadingListener {
@@ -523,5 +656,340 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent mPendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         return mPendingIntent;
+    }
+
+    private void initWV(){
+        final WebView webView = (WebView) findViewById(R.id.webView);
+        webView.setVisibility(View.VISIBLE);
+        webView.setWebViewClient(new WebViewClient() {
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                String cookie = CookieManager.getInstance().getCookie(url);
+                if (cookie == null || !cookie.contains("xsid")) {
+                    String cookies = CookieManager.getInstance().getCookie(url);
+                    Log.d(TAG, "All the cookies in a string:" + cookies);
+                    webView.setVisibility(View.VISIBLE);
+
+                } else {
+                    CookieSyncManager.getInstance().sync();
+                    webView.setVisibility(View.GONE);
+                    String cookies = CookieManager.getInstance().getCookie(url);
+                    prefs.setCookie(cookies);
+                    Log.d(TAG, "All the cookies in a string:" + cookies);
+
+                    getUserData();
+
+                }
+
+            }
+        });
+
+        webView.loadUrl("https://vk.com");
+    }
+    public void updateCookie(){
+
+        WebView webView = (WebView) findViewById(R.id.webView);
+        webView.loadUrl("https://vk.com");
+        webView.setWebViewClient(new WebViewClient() {
+            public void onPageFinished(WebView view, String url) {
+                CookieSyncManager.getInstance().sync();
+                String cookies = CookieManager.getInstance().getCookie(url);
+                prefs.setCookie(cookies);
+                getMyAudio(0);
+                //getMyAudio(0, true);
+            }
+        });
+
+    }
+    @SuppressWarnings("deprecation")
+    public static void clearCookies(Context context)
+    {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            Log.d(TAG, "Using clearCookies code for API >=" + String.valueOf(Build.VERSION_CODES.LOLLIPOP_MR1));
+            CookieManager.getInstance().removeAllCookies(null);
+            CookieManager.getInstance().flush();
+        } else
+        {
+            Log.d(TAG, "Using clearCookies code for API <" + String.valueOf(Build.VERSION_CODES.LOLLIPOP_MR1));
+            CookieSyncManager cookieSyncMngr=CookieSyncManager.createInstance(context);
+            cookieSyncMngr.startSync();
+            CookieManager cookieManager=CookieManager.getInstance();
+            cookieManager.removeAllCookie();
+            cookieManager.removeSessionCookie();
+            cookieSyncMngr.stopSync();
+            cookieSyncMngr.sync();
+        }
+    }
+    private void getCache(){
+
+        //TODO duration audio
+
+        List<MediaMetaData> listsd = new ArrayList<>();
+        int i = 1;
+        File dir = new File(context.getCacheDir(), "/vkmusic");
+        if (dir.exists()) {
+            for (File f : dir.listFiles()) {
+                try{
+                    String name = f.getName();
+                    String titles[] = name.split("_");
+                    MediaMetaData audio = new MediaMetaData();
+                    audio.setMediaId(String.valueOf(i));
+                    audio.setMediaArtist(titles[0]);
+                    audio.setMediaTitle(titles[1]);
+                    audio.setCache(f.getPath());
+                    audio.setCacheBoool(true);
+                    audio.setMediaComposer("");
+                    audio.setMediaDuration("201");
+                    audio.setTypeAudio(TypeAudio.Cache);
+                    listsd.add(audio);
+                    //jcAudios.add(JcAudio.createFromURL(name, url));
+//                    SongDetail songDetail = new SongDetail((i-1),1,titles[0], titles[1], f.getPath(), null, "");
+//                    //songDetail.setIsCashe(true);
+//                    songList.add(songDetail);
+                    i++;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        listOfSongs = listsd;
+        adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>(), TypeAudio.Cache);
+        adapterMusic.setListItemListener(new AdapterMusic.ListItemListener() {
+            @Override
+            public void onItemClickListener(MediaMetaData media, int position) {
+                Log.e("STATE current music ", String.valueOf(media.getPlayState()));
+                MediaMetaData media1 = listOfSongs.get(position);
+                if(media1.getPlayState() == 2) streamingManager.onResume();
+                else playSong(media1);
+
+
+            }
+        });
+        musicList.setAdapter(adapterMusic);
+        adapterMusic.refresh(listOfSongs);
+        configAudioStreamer();
+        checkAlreadyPlaying();
+
+        Log.e("CAshes:","songs= "+ i);
+
+    }
+    private void getMyAudio(final int offset){
+        String cookie = prefs.getCookie();
+        listOfSongs.clear();
+
+        Map<String, String> body = new HashMap<>();
+        body.put("access_hash", "");
+        body.put("owner_id", String.valueOf(prefs.getID()));
+        body.put("playlist_id", "-1");
+        if(offset !=0 )body.put("offset", "100");
+        else body.put("offset", "0");
+        //body.put("count", "15");
+        body.put("act", "load_section");
+        //body.put("section", "all");
+        body.put("al", "1");
+        body.put("type", "playlist");
+        AudioStreamerApplication.getApi().alAudio(cookie, body).enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String b = response.body().string();
+                    listOfSongs = new VKMusic(context).preparePlaylist(b, prefs.getCookie(), TypeAudio.MyMusic);
+                    adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>(), TypeAudio.MyMusic);
+                    adapterMusic.setListItemListener(new AdapterMusic.ListItemListener() {
+                        @Override
+                        public void onItemClickListener(MediaMetaData media, int position) {
+                            Log.e("STATE current music ", String.valueOf(media.getPlayState()));
+                            MediaMetaData media1 = listOfSongs.get(position);
+                            if(media1.getPlayState() == 2) streamingManager.onResume();
+                            else playSong(media1);
+
+
+                        }
+                    });
+                    musicList.setAdapter(adapterMusic);
+                    adapterMusic.refresh(listOfSongs);
+
+                    configAudioStreamer();
+                    checkAlreadyPlaying();
+                    getMyAudioAll(100);
+                    //String sd = "";
+                } catch (Exception e) {
+                    return ;
+                }
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                showSnackErr();
+            }
+        });
+
+    }
+    private void getMyAudioAll(final int offset){
+        String cookie = prefs.getCookie();
+
+        Map<String, String> body = new HashMap<>();
+        body.put("access_hash", "");
+        body.put("owner_id", String.valueOf(prefs.getID()));
+        body.put("playlist_id", "-1");
+        if(offset !=0 )body.put("offset", "100");
+        else body.put("offset", "0");
+        //body.put("count", "15");
+        body.put("act", "load_section");
+        //body.put("section", "all");
+        body.put("al", "1");
+        body.put("type", "playlist");
+        AudioStreamerApplication.getApi().alAudio(cookie, body).enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String b = response.body().string();
+                    listOfSongs.addAll(new VKMusic(context).preparePlaylist(b, prefs.getCookie(), TypeAudio.MyMusic));
+                    adapterMusic.refresh(listOfSongs);
+
+                    configAudioStreamer();
+                    checkAlreadyPlaying();
+                    //String sd = "";
+                } catch (Exception e) {
+                    return ;
+                }
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                showSnackErr();
+            }
+        });
+
+    }
+    public void getUserData() {
+        String cookie = CookieManager.getInstance().getCookie("https://vk.com");
+        Map<String, String> body = new HashMap();
+        body.put("act", "a_get_fast_chat");
+        body.put("al", "1");
+        AudioStreamerApplication.getApi().getUser(cookie, body).enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> result) {
+                Exception e;
+                try {
+                    String response = ((ResponseBody) result.body()).string();
+                    JSONObject me = new JSONObject(Html.fromHtml(response.substring(response.indexOf("<!json>") + 7)).toString()).getJSONObject("me");
+                    //User user = new User(me.getString("id"), me.getString("name"), me.getString("photo"));
+                    String id = me.getString("id");
+                    prefs.setID(id);
+                    getMyAudio(0);
+                    String d = "";
+
+                } catch (Exception e2) {
+                    e = e2;
+                }
+
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            }
+        });
+        return;
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                try {
+                    streamingManager.onStop();
+
+                    listOfSongs = (List<MediaMetaData>) data.getSerializableExtra("list");
+                    adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>(), TypeAudio.AllCategory);
+                    adapterMusic.setListItemListener(new AdapterMusic.ListItemListener() {
+                        @Override
+                        public void onItemClickListener(MediaMetaData media, int position) {
+                            Log.e("STATE current music ", String.valueOf(media.getPlayState()));
+                            MediaMetaData media1 = listOfSongs.get(position);
+                            if(media1.getPlayState() == 2) streamingManager.onResume();
+                            else playSong(media1);
+
+
+                        }
+                    });
+                    musicList.setAdapter(adapterMusic);
+                    adapterMusic.refresh(listOfSongs);
+
+                    configAudioStreamer();
+                    checkAlreadyPlaying();
+
+                    MediaMetaData media = (MediaMetaData) data.getParcelableExtra(MediaMetaData.class.getCanonicalName());
+                    if(media.getPlayState() == 2) streamingManager.onResume();
+                    else playSong(media);
+                } catch (Exception e) {
+                    Log.e("play ne list", e.toString());
+                    e.printStackTrace();
+                }
+
+            }
+        }else if (requestCode == FILE_CODE && resultCode == Activity.RESULT_OK) {
+            // Use the provided utility method to parse the result
+            List<Uri> files = Utils.getSelectedFilesFromResult(data);
+            for (Uri uri: files) {
+                File file = Utils.getFileForUri(uri);
+                // Do something with the result...
+            }
+        }
+    }
+
+    private void showSnackErr() {
+    }
+
+    private void showRatingDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Пять звезд.");
+        alertDialog.setMessage("Понравилось приложние Поставь пять звезд. Поддержи разработчиков.");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                        } catch (android.content.ActivityNotFoundException anfe) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                        }
+                    }
+                });
+        alertDialog.show();
+
+
+    }
+
+//    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            moveTaskToBack(true); return true;
+//        } return super.onKeyDown(keyCode, event);
+//    }
+
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            Log.e("Main", "review= "+ String.valueOf(prefs.getReview()));
+            if (isExpand) {
+                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            return true;
+            }else if(prefs.getReview() == 3){
+                prefs.setReview(prefs.getReview() + 1);
+                showRatingDialog();
+                return true;
+            }else if(prefs.getReview() == 7 ){
+                prefs.setReview(prefs.getReview() + 1);
+                showRatingDialog();
+                return true;
+            }else if(prefs.getReview() == 12){
+                showRatingDialog();
+                prefs.setReview(prefs.getReview() + 1);
+                return true;
+            }else {
+                prefs.setReview(prefs.getReview() + 1);
+                moveTaskToBack(true); return true;
+            }
+
+        } return super.onKeyDown(keyCode, event);
     }
 }

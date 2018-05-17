@@ -20,6 +20,33 @@ public class MediaMetaData implements Parcelable {
     private String mediaDuration;
     private String mediaArt;
     private int playState;
+    private boolean isCache = false;
+    private String cache;
+    private TypeAudio typeAudio;
+
+    public TypeAudio getTypeAudio() {
+        return typeAudio;
+    }
+
+    public void setTypeAudio(TypeAudio typeAudio) {
+        this.typeAudio = typeAudio;
+    }
+
+    public boolean isCache() {
+        return isCache;
+    }
+
+    public void setCacheBoool(boolean cache) {
+        isCache = cache;
+    }
+
+    public String getCache() {
+        return cache;
+    }
+
+    public void setCache(String cache) {
+        this.cache = cache;
+    }
 
     public MediaMetaData() {
     }

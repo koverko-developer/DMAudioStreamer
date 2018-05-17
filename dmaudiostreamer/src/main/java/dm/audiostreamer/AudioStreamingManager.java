@@ -9,15 +9,26 @@ package dm.audiostreamer;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AudioStreamingManager extends StreamingManager {
     private static final String TAG = Logger.makeLogTag(AudioStreamingManager.class);
@@ -25,6 +36,7 @@ public class AudioStreamingManager extends StreamingManager {
     private AudioPlaybackListener audioPlayback;
     private CurrentSessionCallback currentSessionCallback;
     private static volatile AudioStreamingManager instance = null;
+    private static String STR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN0PQRSTUVWXYZO123456789+/=";
     private Context context;
     private int index = 0;
     private boolean playMultiple = false;
@@ -34,8 +46,13 @@ public class AudioStreamingManager extends StreamingManager {
     private List<MediaMetaData> mediaList = new ArrayList<>();
     public static volatile Handler applicationHandler = null;
 
+    public Prefs prefs;
+    public boolean isLoading = false;
+
+    int id = 0;
 
     public static AudioStreamingManager getInstance(Context context) {
+
         if (instance == null) {
             synchronized (AudioStreamingManager.class) {
                 instance = new AudioStreamingManager();
@@ -43,7 +60,9 @@ public class AudioStreamingManager extends StreamingManager {
                 instance.audioPlayback = new AudioPlaybackListener(context);
                 instance.audioPlayback.setCallback(new MyStatusCallback());
                 applicationHandler = new Handler(context.getMainLooper());
+
             }
+
         }
         return instance;
     }
@@ -103,8 +122,18 @@ public class AudioStreamingManager extends StreamingManager {
         }
     }
 
+    public void onResume(){
+        try {
+            audioPlayback.play(currentAudio);
+            onSeekTo(lastSeekPosition());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onPlay(MediaMetaData infoData) {
+        Log.e(TAG, "this is play music");
         if (infoData == null) {
             return;
         }
@@ -113,16 +142,21 @@ public class AudioStreamingManager extends StreamingManager {
         }
         if (this.currentAudio != null && this.currentAudio.getMediaId().equalsIgnoreCase(infoData.getMediaId()) && instance.audioPlayback != null && instance.audioPlayback.isPlaying()) {
             onPause();
+            //MusicActivity activity = (MusicActivity) context;
+            //onStop();
+            //this.currentAudio = null;
+
         } else {
             this.currentAudio = infoData;
             handlePlayRequest();
-            if (currentSessionCallback != null)
-                currentSessionCallback.playCurrent(index, currentAudio);
+//            if (currentSessionCallback != null)
+//                currentSessionCallback.playCurrent(index, currentAudio);
         }
     }
 
     @Override
     public void onPause() {
+
         handlePauseRequest();
     }
 
@@ -143,26 +177,36 @@ public class AudioStreamingManager extends StreamingManager {
 
     @Override
     public void onSkipToNext() {
-        int nextIndex = index + 1;
-        if (isValidIndex(true, nextIndex)) {
-            MediaMetaData metaData = mediaList.get(nextIndex);
-            onPlay(metaData);
-            if (instance.currentSessionCallback != null) {
-                currentSessionCallback.playNext(nextIndex, metaData);
+        Log.e("NOTIFY ","next");
+        try {
+            //onPause();
+            index = index + 1;
+            isLoading = false;
+            if(index!=this.mediaList.size())currentAudio =this.mediaList.get(index);
+            else {
+                currentAudio = this.mediaList.get(0);
             }
+            handlePlayRequest();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
 
     @Override
     public void onSkipToPrevious() {
-        int prvIndex = index - 1;
-        if (isValidIndex(false, prvIndex)) {
-            MediaMetaData metaData = mediaList.get(prvIndex);
-            onPlay(metaData);
-            if (instance.currentSessionCallback != null) {
-                currentSessionCallback.playPrevious(prvIndex, metaData);
+        Log.e("NOTIFY ","pre");
+        try {
+            //onPause();
+            index = index - 1;
+            isLoading = false;
+            if(index!=-1) currentAudio = this.mediaList.get(index);
+            else {
+                currentAudio = this.mediaList.get(this.mediaList.size()-1);
             }
+            handlePlayRequest();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -187,22 +231,110 @@ public class AudioStreamingManager extends StreamingManager {
 
     public void handlePlayRequest() {
         Logger.d(TAG, "handlePlayRequest: mState=" + audioPlayback.getState());
-        if (audioPlayback != null && currentAudio != null) {
-            audioPlayback.play(currentAudio);
-            if (showPlayerNotification) {
-                if (context != null) {
-                    Intent intent = new Intent(context, AudioStreamingService.class);
-                    context.startService(intent);
-                } else {
-                    Intent intent = new Intent(context, AudioStreamingService.class);
-                    context.stopService(intent);
-                }
+        Log.e("handlePlayRequesr", "start");
+        prefs = new Prefs(context);
 
-                NotificationManager.getInstance().postNotificationName(NotificationManager.audioDidStarted, currentAudio);
-                NotificationManager.getInstance().postNotificationName(NotificationManager.audioPlayStateChanged, getCurrentAudio().getMediaId());
-                setPendingIntent();
+        if(!isLoading){
+            isLoading = true;
+            if (audioPlayback != null && currentAudio != null) {
+
+                if(!currentAudio.isCache()){
+                    try {
+
+                        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl("https://vk.com") //Базовая часть адреса
+                                .addConverterFactory(GsonConverterFactory.create()) //Конвертер, необходимый для преобразования JSON'а в объекты
+                                .build();
+                        Api vogellaAPI = retrofit.create(Api.class);
+
+
+                        String cookie = currentAudio.getMediaComposer();
+                        Map<String, String> body = new HashMap();
+                        body.put("act", "reload_audio");
+                        body.put("al", "1");
+                        body.put("ids", currentAudio.getMediaUrl());
+
+                        Call<ResponseBody> call = vogellaAPI.alAudio(cookie, body);
+                        call.enqueue(new Callback<ResponseBody>() {
+                            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
+                                try {
+                                    String lastPath = "";
+                                    String path = "";
+                                    String response = ((ResponseBody) res.body()).string();
+                                    if (response.length() < 100) {
+                                        handlePlayRequest();
+                                    }else {
+                                        path = decode(response.substring(response.indexOf("https"), response.indexOf("\",\"")).replace("\\", ""), Integer.parseInt(prefs.getID()));
+                                        currentAudio.setMediaUrl(path);
+                                        isLoading = false;
+                                        audioPlayback.play(currentAudio);
+                                        try {
+
+                                            new NotificationTask(context, currentAudio.getMediaArtist()+"_"+currentAudio.getMediaTitle(), id, currentAudio)
+                                                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 10);
+                                            id++;
+
+                                        }catch (Exception e){
+                                            e.printStackTrace();
+                                        }
+                                        try{System.out.print("PATH"+path);}catch (Exception e){}
+                                        if (showPlayerNotification) {
+                                            if (context != null) {
+                                                Intent intent = new Intent(context, AudioStreamingService.class);
+                                                context.startService(intent);
+                                            } else {
+                                                Intent intent = new Intent(context, AudioStreamingService.class);
+                                                context.stopService(intent);
+                                            }
+
+                                            NotificationManager.getInstance().postNotificationName(NotificationManager.audioDidStarted, currentAudio);
+                                            NotificationManager.getInstance().postNotificationName(NotificationManager.audioPlayStateChanged, getCurrentAudio().getMediaId());
+                                            setPendingIntent();
+                                        }
+                                    }
+
+                                } catch (Exception e) {
+                                    String er = e.toString();
+                                    //ThrowableExtension.printStackTrace(e);
+                                }
+                            }
+
+                            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            }
+                        });
+                        //Prefs prefs = new Prefs(getBaseContext());
+                        //final int id = prefs.getID();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }else {
+                    isLoading = false;
+                    currentAudio.setMediaUrl(currentAudio.getCache());
+                    audioPlayback.play(currentAudio);
+
+                    if (showPlayerNotification) {
+                        if (context != null) {
+                            Intent intent = new Intent(context, AudioStreamingService.class);
+                            context.startService(intent);
+                        } else {
+                            Intent intent = new Intent(context, AudioStreamingService.class);
+                            context.stopService(intent);
+                        }
+
+                        NotificationManager.getInstance().postNotificationName(NotificationManager.audioDidStarted, currentAudio);
+                        NotificationManager.getInstance().postNotificationName(NotificationManager.audioPlayStateChanged, getCurrentAudio().getMediaId());
+                        setPendingIntent();
+                    }
+                }
+                if (currentSessionCallback != null)
+                    currentSessionCallback.playCurrent(index, currentAudio);
             }
-        }
+        }else Log.e("ERROR", "loading ........");
+
+
+//
     }
 
     private void setPendingIntent(){
@@ -335,6 +467,107 @@ public class AudioStreamingManager extends StreamingManager {
         if (instance.mLastPlaybackState != PlaybackStateCompat.STATE_PAUSED && instance.currentSessionCallback != null) {
             instance.currentSessionCallback.currentSeekBarPosition((int) audioPlayback.getCurrentStreamPosition());
         }
+    }
+
+    private static String shiftArray(String[] array) {
+        String result = array[0];
+        System.arraycopy(array, 1, array, 0, array.length - 1);
+        return result;
+    }
+
+    private static String decode(String url, int userId) {
+        try {
+            String[] vals = url.split("/?extra=")[1].split("#");
+            url = vk_o(vals[0]);
+            String[] opsArr = vk_o(vals[1]).split(String.valueOf('\t'));
+            for (int i = opsArr.length - 1; i >= 0; i--) {
+                String[] argsArr = opsArr[i].split(String.valueOf('\u000b'));
+                String opInd = shiftArray(argsArr);
+                int i2 = -1;
+                url = vk_i(url, Integer.parseInt(argsArr[0]), userId);
+                String s ="";
+                //            switch (i2) {
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_autoDismiss /*0*/:
+                //                    url = vk_i(url, Integer.parseInt(argsArr[0]), userId);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_autoFinish /*1*/:
+                //                    url = vk_v(url);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_backgroundColour /*2*/:
+                //                    url = vk_r(url, Integer.parseInt(argsArr[0]));
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_captureTouchEventOnFocal /*3*/:
+                //                    url = vk_x(url, argsArr[0]);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_captureTouchEventOutsidePrompt /*4*/:
+                //                    url = vk_s(url, Integer.parseInt(argsArr[0]));
+                //                    break;
+                //                default:
+                //                    break;
+                //            }
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return url.substring(0, url.indexOf("?extra="));
+    }
+
+    private static String vk_i(String str, int e, int userID) {
+        return vk_s(str, e ^ userID);
+    }
+    private static String vk_s(String str, int start) {
+        StringBuilder result = null;
+        try {
+            result = new StringBuilder(str);
+            int len = str.length();
+            int e = start;
+            if (len > 0) {
+                int i;
+                Integer[] shufflePos = new Integer[len];
+                for (i = len - 1; i >= 0; i--) {
+                    e = Math.abs((((i + 1) * len) ^ (e + i)) % len);
+                    shufflePos[i] = Integer.valueOf(e);
+                }
+                for (i = 1; i < len; i++) {
+                    int offset = shufflePos[(len - i) - 1].intValue();
+                    String prev = result.substring(i, i + 1);
+                    result.replace(i, i + 1, result.substring(offset, offset + 1));
+                    result.replace(offset, offset + 1, prev);
+                }
+            }
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return result.toString();
+    }
+
+    private static String vk_o(String str) {
+        StringBuilder b = null;
+        try {
+            int len = str.length();
+            int i = 0;
+            b = new StringBuilder();
+            int index2 = 0;
+            for (int s = 0; s < len; s++) {
+                int symIndex = STR.indexOf(str.substring(s, s + 1));
+                if (symIndex >= 0) {
+                    if (index2 % 4 != 0) {
+                        i = (i << 6) + symIndex;
+                    } else {
+                        i = symIndex;
+                    }
+                    if (index2 % 4 != 0) {
+                        index2++;
+                        b.append((char) ((i >> ((index2 * -2) & 6)) & 255));
+                    } else {
+                        index2++;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return b.toString();
     }
 
 }

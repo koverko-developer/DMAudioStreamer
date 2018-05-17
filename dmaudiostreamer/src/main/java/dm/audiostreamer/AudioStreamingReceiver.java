@@ -32,14 +32,12 @@ public class AudioStreamingReceiver extends BroadcastReceiver {
             switch (keyEvent.getKeyCode()) {
                 case KeyEvent.KEYCODE_HEADSETHOOK:
                 case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
-                    if (this.audioStreamingManager .isPlaying()) {
-                        this.audioStreamingManager .onPause();
-                    } else {
-                        this.audioStreamingManager .onPlay(this.audioStreamingManager .getCurrentAudio());
-                    }
+                    if(audioStreamingManager.getCurrentAudio().getPlayState() == 2) audioStreamingManager.onResume();
+                    else audioStreamingManager.onPlay(audioStreamingManager.getCurrentAudio());
                     break;
                 case KeyEvent.KEYCODE_MEDIA_PLAY:
-                    this.audioStreamingManager .onPlay(this.audioStreamingManager .getCurrentAudio());
+                    if(audioStreamingManager.getCurrentAudio().getPlayState() == 2) audioStreamingManager.onResume();
+                    else audioStreamingManager.onPlay(audioStreamingManager.getCurrentAudio());
                     break;
                 case KeyEvent.KEYCODE_MEDIA_PAUSE:
                     this.audioStreamingManager .onPause();
@@ -56,7 +54,8 @@ public class AudioStreamingReceiver extends BroadcastReceiver {
         } else {
             this.audioStreamingManager = AudioStreamingManager.getInstance(context);
             if (intent.getAction().equals(AudioStreamingService.NOTIFY_PLAY)) {
-                this.audioStreamingManager.onPlay(this.audioStreamingManager.getCurrentAudio());
+                if(audioStreamingManager.getCurrentAudio().getPlayState() == 2) audioStreamingManager.onResume();
+                else audioStreamingManager.onPlay(audioStreamingManager.getCurrentAudio());
             } else if (intent.getAction().equals(AudioStreamingService.NOTIFY_PAUSE)
                     || intent.getAction().equals(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY)) {
                 this.audioStreamingManager.onPause();

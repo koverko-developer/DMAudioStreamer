@@ -13,13 +13,25 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import dm.audiostreamerdemo.network.Api;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class AudioStreamerApplication extends Application {
+
+    private static Api umoriliApi;
+    private Retrofit retrofit;
 
     @Override
     public void onCreate() {
         super.onCreate();
         //Image Loader
+        retrofit = new Retrofit.Builder()
+                .baseUrl("https://vk.com") //Базовая часть адреса
+                .addConverterFactory(GsonConverterFactory.create()) //Конвертер, необходимый для преобразования JSON'а в объекты
+                .build();
+        umoriliApi = retrofit.create(Api.class);
         initImageLoader(getApplicationContext());
     }
 
@@ -34,5 +46,8 @@ public class AudioStreamerApplication extends Application {
 
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config.build());
+    }
+    public static Api getApi() {
+        return umoriliApi;
     }
 }
