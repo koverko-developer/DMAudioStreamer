@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VNPlayer music offline</string>
+    <string name="app_name">VMPlayer music offline</string>
     <string-array name="menu">
         <item>Мои аудиозаписи</item>
         <item>Новинки</item>
@@ -8,4 +8,13 @@
         <item>Ваши группы</item>
     </string-array>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="download_loading">Идет загрузка файла...</string>
+    <string name="download_start">Начало загрузки</string>
+    <string name="download_error">Ошибка загрузки...</string>
+    <string name="download_path">Выберите папку для загрузки.</string>
+    <string name="download_in">Сохраняем в</string>
+    <string name="id_ad1">ca-app-pub-1563785045157371~5666205594</string>
+    <string name="int1">ca-app-pub-1563785045157371/5481538616</string>
+
+
 </resources>

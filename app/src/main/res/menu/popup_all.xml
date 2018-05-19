@@ -11,6 +11,6 @@
 
     <item
         android:id="@+id/menu3"
-        android:title="Добавить плейлиста ВК"/>
+        android:title="Добавить в плейлист ВК"/>
 
 </menu>

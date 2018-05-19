@@ -6,10 +6,12 @@
 package dm.audiostreamerdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
@@ -23,6 +25,7 @@ import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -32,19 +35,36 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.thin.downloadmanager.util.Log;
 
+import java.io.File;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
+import dm.audiostreamer.AudioStreamingService;
 import dm.audiostreamer.MediaMetaData;
+import dm.audiostreamer.NotificationManager;
 import dm.audiostreamer.TypeAudio;
+import dm.audiostreamerdemo.AudioStreamerApplication;
 import dm.audiostreamerdemo.R;
 import dm.audiostreamerdemo.SearchActivity;
 import dm.audiostreamerdemo.activity.MusicActivity;
+import dm.audiostreamerdemo.data.Prefs;
+import dm.audiostreamerdemo.network.DownloadServices;
+import dm.audiostreamerdemo.network.NotificationTask;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdapterMusic extends BaseAdapter {
+    private static String STR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN0PQRSTUVWXYZO123456789+/=";
+
     private List<MediaMetaData> musicList;
     private Context mContext;
     private LayoutInflater inflate;
@@ -151,15 +171,15 @@ public class AdapterMusic extends BaseAdapter {
                 public void onClick(View view) {
                     switch (type){
                         case Cache:
-                            showPopupMenuCache(view);
+                            showPopupMenuCache(view, position);
                             Log.e("adapter type audio: ", "cashe");
                             break;
                         case MyMusic:
-                            showPopupMenuMy(view);
+                            showPopupMenuMy(view, position);
                             Log.e("adapter type audio: ", "mymusic");
                             break;
                         case AllCategory:
-                            showPopupMenuAll(view);
+                            showPopupMenuAll(view, position);
                             Log.e("adapter type audio: ", "all");
                             break;
                     }
@@ -269,12 +289,13 @@ public class AdapterMusic extends BaseAdapter {
         void onItemClickListener(MediaMetaData media, int position);
     }
 
-    private void showPopupMenuCache(View v) {
+    private void showPopupMenuCache(View v, int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, v);
         popupMenu.inflate(R.menu.popup_cache); // Для Android 4.0
         // для версии Android 3.0 нужно использовать длинный вариант
         // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
         // popupMenu.getMenu());
+        final MediaMetaData metaData = (MediaMetaData) getItem(position) ;
 
         popupMenu
                 .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -288,10 +309,17 @@ public class AdapterMusic extends BaseAdapter {
 
                             case R.id.menu1:
                                 Log.e("click menu:", "delete from cache");
+                                deleteFromCache(metaData);
+                                final Prefs prefs = new Prefs(mContext);
+
+                                if(prefs.getAds() == prefs.getAdsCount()) {
+                                    prefs.resetAds();
+                                    activity.showAds();
+                                }else prefs.setAds();
                                 return true;
-                            case R.id.menu2:
-                                Log.e("click menu:", "download from cache");
-                                return true;
+//                            case R.id.menu2:
+//                                Log.e("click menu:", "download from cache");
+//                                return true;
 //                            case R.id.menu3:
 //                                Log.e("click menu:", "add to playlist");
                             default:
@@ -303,13 +331,15 @@ public class AdapterMusic extends BaseAdapter {
         popupMenu.show();
     }
 
-    private void showPopupMenuMy(View v) {
+    private void showPopupMenuMy(View v, int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, v);
         popupMenu.inflate(R.menu.popup_my); // Для Android 4.0
         // для версии Android 3.0 нужно использовать длинный вариант
         // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
         // popupMenu.getMenu());
 
+        final MediaMetaData metaData = (MediaMetaData) getItem(position) ;
+
         popupMenu
                 .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
@@ -318,16 +348,35 @@ public class AdapterMusic extends BaseAdapter {
                         // Toast.makeText(PopupMenuDemoActivity.this,
                         // item.toString(), Toast.LENGTH_LONG).show();
                         // return true;
+                        final Prefs prefs = new Prefs(mContext);
+
+                        if(prefs.getAds() == prefs.getAdsCount()) {
+                            prefs.resetAds();
+                            activity.showAds();
+                        }else prefs.setAds();
                         switch (item.getItemId()) {
 
                             case R.id.menu1:
+
                                 Log.e("click menu:", "save to cache");
+                                //new DownloadServices(mContext).startDownload(metaData.getMediaArtist()+"_"+metaData.getMediaTitle(),
+//                                        1, metaData);
+//                                Random random = new Random();
+//                                int i = random.nextInt(1000);
+//                                new dm.audiostreamer.NotificationTask(mContext, metaData.getMediaArtist()+"_"+metaData.getMediaTitle(), i, metaData)
+//                                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 10);
+                                dToCache(metaData);
                                 return true;
                             case R.id.menu2:
+
                                 Log.e("click menu:", "download");
+                                new DownloadServices(mContext).startDownload(metaData.getMediaArtist()+"_"+metaData.getMediaTitle(),
+                                        2, metaData);
                                 return true;
                             case R.id.menu3:
+
                                 Log.e("click menu:", "delete from playlist");
+                                removeFromPlaylist(metaData);
                             default:
                                 return false;
                         }
@@ -336,13 +385,13 @@ public class AdapterMusic extends BaseAdapter {
 
         popupMenu.show();
     }
-    private void showPopupMenuAll(View v) {
+    private void showPopupMenuAll(View v , int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, v);
         popupMenu.inflate(R.menu.popup_all); // Для Android 4.0
         // для версии Android 3.0 нужно использовать длинный вариант
         // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
         // popupMenu.getMenu());
-
+        final MediaMetaData metaData = (MediaMetaData) getItem(position) ;
         popupMenu
                 .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
@@ -351,16 +400,27 @@ public class AdapterMusic extends BaseAdapter {
                         // Toast.makeText(PopupMenuDemoActivity.this,
                         // item.toString(), Toast.LENGTH_LONG).show();
                         // return true;
+                        final Prefs prefs = new Prefs(mContext);
+
+                        if(prefs.getAds() == prefs.getAdsCount()) {
+                            prefs.resetAds();
+                            activity.showAds();
+                        }else prefs.setAds();
                         switch (item.getItemId()) {
 
                             case R.id.menu1:
+
                                 Log.e("click menu:", "save to cache");
+                                dToCache(metaData);
                                 return true;
                             case R.id.menu2:
+                                new DownloadServices(mContext).startDownload(metaData.getMediaArtist()+"_"+metaData.getMediaTitle(),
+                                        2, metaData);
                                 Log.e("click menu:", "download");
                                 return true;
                             case R.id.menu3:
                                 Log.e("click menu:", "add to playlist");
+                                addToPlaylist(metaData);
                             default:
                                 return false;
                         }
@@ -369,5 +429,246 @@ public class AdapterMusic extends BaseAdapter {
 
         popupMenu.show();
     }
+
+    private void dToCache(final MediaMetaData currentAudio){
+        final Prefs prefs = new Prefs(mContext);
+        String cookie = currentAudio.getMediaComposer();
+        Map<String, String> body = new HashMap();
+        body.put("act", "reload_audio");
+        body.put("al", "1");
+        body.put("ids", currentAudio.getMediaUrl());
+
+        Call<ResponseBody> call = AudioStreamerApplication.getApi().alAudio(cookie, body);
+        call.enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
+                try {
+                    String lastPath = "";
+                    String path = "";
+                    String response = ((ResponseBody) res.body()).string();
+                    if (response.length() < 100) {
+                        dToCache(currentAudio);
+                    }else {
+                        path = decode(response.substring(response.indexOf("https"), response.indexOf("\",\"")).replace("\\", ""), Integer.parseInt(prefs.getID()));
+                        currentAudio.setMediaUrl(path);
+
+                        Random random = new Random();
+                        int id = random.nextInt(1000);
+                        new NotificationTask(mContext, currentAudio.getMediaArtist()+"_"+currentAudio.getMediaTitle(), id, currentAudio)
+                                .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 10);
+                    }
+
+                } catch (Exception e) {
+                    String er = e.toString();
+                    //ThrowableExtension.printStackTrace(e);
+                }
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            }
+        });
+    }
+
+    private void deleteFromCache(MediaMetaData data){
+        List<MediaMetaData> listsd = new ArrayList<>();
+        int i = 1;
+        File dir = new File(mContext.getCacheDir(), "/vkmusic");
+        if (dir.exists()) {
+            for (File f : dir.listFiles()) {
+                try{
+                    String name = f.getName();
+
+                    if(name.contains(data.getMediaArtist()+"_"+data.getMediaTitle())) {
+                        f.delete();
+                        Log.e("adapter", "delete"+name);
+                        Toast.makeText(mContext, "Удалено из КЭШа", Toast.LENGTH_SHORT).show();
+
+                        MusicActivity activity = (MusicActivity) mContext;
+                        activity.getCache();
+
+                    }
+
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void addToPlaylist(final MediaMetaData currentAudio){
+
+        final Prefs prefs = new Prefs(mContext);
+        String cookie = currentAudio.getMediaComposer();
+        String audio_id = currentAudio.getMediaUrl().split("_")[1];
+        String audio_owner_id = currentAudio.getMediaUrl().split("_")[0];
+        Map<String, String> body = new HashMap();
+        body.put("act", "add");
+        body.put("al", "1");
+        body.put("audio_id", audio_id);
+        body.put("audio_owner_id", audio_owner_id);
+        body.put("group_id", "0");
+        body.put("hash", currentAudio.getHashAdd());
+        body.put("from", "recoms_recoms");
+
+        Call<ResponseBody> call = AudioStreamerApplication.getApi().alAudio(cookie, body);
+        call.enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
+                try {
+
+                    if(res.body() != null) Toast.makeText(mContext, "Добавлено в аудиозаписи", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    String er = e.toString();
+                    //ThrowableExtension.printStackTrace(e);
+                }
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            }
+        });
+
+    }
+
+    private void removeFromPlaylist(final MediaMetaData currentAudio){
+
+        try {
+            final Prefs prefs = new Prefs(mContext);
+            String cookie = currentAudio.getMediaComposer();
+            String audio_id = currentAudio.getMediaUrl().split("_")[1];
+            String audio_owner_id = currentAudio.getMediaUrl().split("_")[0];
+            Map<String, String> body = new HashMap();
+            body.put("act", "delete_audio");
+            body.put("al", "1");
+            body.put("aid", audio_id);
+            body.put("oid", audio_owner_id);
+            body.put("hash", currentAudio.getHashRemove());
+            body.put("restore", "1");
+
+            Call<ResponseBody> call = AudioStreamerApplication.getApi().alAudio(cookie, body);
+            call.enqueue(new Callback<ResponseBody>() {
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
+                    try {
+
+                        if(res.body() != null) Toast.makeText(mContext, "Удалено из плейлиста", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        String er = e.toString();
+                        //ThrowableExtension.printStackTrace(e);
+                    }
+                }
+
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                }
+            });
+
+            MusicActivity activity = (MusicActivity) mContext;
+            activity.getMyAudio(0);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static String decode(String url, int userId) {
+        try {
+            String[] vals = url.split("/?extra=")[1].split("#");
+            url = vk_o(vals[0]);
+            String[] opsArr = vk_o(vals[1]).split(String.valueOf('\t'));
+            for (int i = opsArr.length - 1; i >= 0; i--) {
+                String[] argsArr = opsArr[i].split(String.valueOf('\u000b'));
+                String opInd = shiftArray(argsArr);
+                int i2 = -1;
+                url = vk_i(url, Integer.parseInt(argsArr[0]), userId);
+                String s ="";
+                //            switch (i2) {
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_autoDismiss /*0*/:
+                //                    url = vk_i(url, Integer.parseInt(argsArr[0]), userId);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_autoFinish /*1*/:
+                //                    url = vk_v(url);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_backgroundColour /*2*/:
+                //                    url = vk_r(url, Integer.parseInt(argsArr[0]));
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_captureTouchEventOnFocal /*3*/:
+                //                    url = vk_x(url, argsArr[0]);
+                //                    break;
+                //                case uk.co.samuelwall.materialtaptargetprompt.R.styleable.PromptView_mttp_captureTouchEventOutsidePrompt /*4*/:
+                //                    url = vk_s(url, Integer.parseInt(argsArr[0]));
+                //                    break;
+                //                default:
+                //                    break;
+                //            }
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return url.substring(0, url.indexOf("?extra="));
+    }
+
+    private static String vk_i(String str, int e, int userID) {
+        return vk_s(str, e ^ userID);
+    }
+    private static String vk_s(String str, int start) {
+        StringBuilder result = null;
+        try {
+            result = new StringBuilder(str);
+            int len = str.length();
+            int e = start;
+            if (len > 0) {
+                int i;
+                Integer[] shufflePos = new Integer[len];
+                for (i = len - 1; i >= 0; i--) {
+                    e = Math.abs((((i + 1) * len) ^ (e + i)) % len);
+                    shufflePos[i] = Integer.valueOf(e);
+                }
+                for (i = 1; i < len; i++) {
+                    int offset = shufflePos[(len - i) - 1].intValue();
+                    String prev = result.substring(i, i + 1);
+                    result.replace(i, i + 1, result.substring(offset, offset + 1));
+                    result.replace(offset, offset + 1, prev);
+                }
+            }
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return result.toString();
+    }
+
+    private static String vk_o(String str) {
+        StringBuilder b = null;
+        try {
+            int len = str.length();
+            int i = 0;
+            b = new StringBuilder();
+            int index2 = 0;
+            for (int s = 0; s < len; s++) {
+                int symIndex = STR.indexOf(str.substring(s, s + 1));
+                if (symIndex >= 0) {
+                    if (index2 % 4 != 0) {
+                        i = (i << 6) + symIndex;
+                    } else {
+                        i = symIndex;
+                    }
+                    if (index2 % 4 != 0) {
+                        index2++;
+                        b.append((char) ((i >> ((index2 * -2) & 6)) & 255));
+                    } else {
+                        index2++;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return b.toString();
+    }
+
+    private static String shiftArray(String[] array) {
+        String result = array[0];
+        System.arraycopy(array, 1, array, 0, array.length - 1);
+        return result;
+    }
+
+
 
 }

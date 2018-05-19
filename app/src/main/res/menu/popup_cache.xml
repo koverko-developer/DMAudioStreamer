@@ -5,8 +5,6 @@
         android:id="@+id/menu1"
         android:icon="@drawable/ic_launcher"
         android:title="Удалить из кэша"/>
-    <item
-        android:id="@+id/menu2"
-        android:title="Скачать"/>
+
 
 </menu>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DMAudioStreamer</string>
+    <string name="download_loading">Идет загрузка файла...</string>
+    <string name="download_start">Начало загрузки</string>
+    <string name="download_error">Ошибка загрузки...</string>
+    <string name="download_path">Выберите папку для загрузки.</string>
+    <string name="download_in">Сохраняем в</string>
 </resources>

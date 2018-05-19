@@ -37,6 +37,8 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     compile 'lib.kashif:folderpicker:2.2'
     compile 'com.nononsenseapps:filepicker:4.1.0'
+    compile 'com.google.android.gms:play-services-ads:11.8.0'
+
 }
 
 repositories {

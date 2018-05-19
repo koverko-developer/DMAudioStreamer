@@ -23,6 +23,24 @@ public class MediaMetaData implements Parcelable {
     private boolean isCache = false;
     private String cache;
     private TypeAudio typeAudio;
+    String hash;
+    String hash2;
+
+    public String getHash2() {
+        return hash2;
+    }
+
+    public void setHash2(String hash2) {
+        this.hash2 = hash2;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 
     public TypeAudio getTypeAudio() {
         return typeAudio;
@@ -163,5 +181,24 @@ public class MediaMetaData implements Parcelable {
 
     public void setPlayState(int playState) {
         this.playState = playState;
+    }
+
+    public String getHashAdd(){
+        try{
+            String addHash = this.hash.split("/")[0];
+            return addHash;
+
+        }catch (Exception e){
+            return "";
+        }
+    }
+    public String getHashRemove(){
+        try{
+            String addHash = this.hash.split("/")[3];
+            return addHash;
+
+        }catch (Exception e){
+            return "";
+        }
     }
 }

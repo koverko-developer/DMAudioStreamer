@@ -5,11 +5,14 @@
  */
 package dm.audiostreamerdemo.activity;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
@@ -17,6 +20,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +31,8 @@ import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
@@ -39,6 +46,9 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.nononsenseapps.filepicker.FilePickerActivity;
 import com.nononsenseapps.filepicker.Utils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -89,6 +99,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     private static final int FILE_CODE = 203;
     private Context context;
     private ListView musicList;
+    InterstitialAd interstitial;
     private AdapterMusic adapterMusic;
     private static final int SDCARD_PERMISSION = 1,
             FOLDER_PICKER_CODE = 2,
@@ -148,10 +159,19 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             //loadMusicData();
         }
         else initWV();
+        if(pgPlayPauseLayout != null){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && pgPlayPauseLayout != null && ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(MusicActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 199);
+            }
+        }
+        ads();
 
     }
 
     private void spinnerInit(){
+        //Log.e(TAG,String.valueOf(prefs.getAdsCount()));
+
+
         String colors[] = {"Мои аудиозаписи","Новинки","Популярное","Специально для Вас","Ваши группы","КЭШ", "Выбор папки"};
 
 // Selection of the spinner
@@ -165,13 +185,20 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(prefs.getAds() == prefs.getAdsCount()) {
+                    prefs.resetAds();
+                    showAds();
+                }else prefs.setAds();
                 if(i == 0) getMyAudio(0);
                 else if (i==5){
                     getCache();
+                    streamingManager.onStop();
 
                 }else if(i == 6) {
-                    pickFolder();
+                    showSelectType();
+
                 }else {
+
                     Intent intent = new Intent(MusicActivity.this, SearchActivity.class);
                     intent.putExtra("type", i);
                     startActivityForResult(intent, REQUEST_CODE);
@@ -199,11 +226,40 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
 
     private void showSelectType(){
 
+        final Dialog dialogEdit = new Dialog(MusicActivity.this);
+        //dialogEdit.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialogEdit.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogEdit.setContentView(R.layout.alert_select);
 
+        TextView tv_in = dialogEdit.findViewById(R.id.select_in);
+        TextView tv_sd = dialogEdit.findViewById(R.id.select_sd);
+
+        tv_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickFolder(0);
+                dialogEdit.dismiss();
+            }
+        });
+
+        tv_sd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickFolder(1);
+                dialogEdit.dismiss();
+            }
+        });
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialogEdit.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        dialogEdit.show();
+        dialogEdit.getWindow().setAttributes(lp);
 
     }
 
-    void pickFolder() {
+    void pickFolder(int type) {
         Intent i = new Intent(context, FilePickerActivity.class);
         // This works if you defined the intent filter
         // Intent i = new Intent(Intent.ACTION_GET_CONTENT);
@@ -217,7 +273,8 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         // internal memory.
         String s = Environment.getExternalStorageDirectory().getPath();
         Log.e(TAG, "start folder: " +s);
-        i.putExtra(FilePickerActivity.EXTRA_START_PATH, Environment.getExternalStorageState());
+        if(type == 0)i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/storage/emulated/0");
+        else i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/sdcard");
 
         startActivityForResult(i, FILE_CODE);
     }
@@ -514,6 +571,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                 if(media1.getPlayState() == 2) streamingManager.onResume();
                 else playSong(media1);
 
+                streamingManager.setShowPlayerNotification(true);
 
             }
         });
@@ -678,6 +736,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     webView.setVisibility(View.GONE);
                     String cookies = CookieManager.getInstance().getCookie(url);
                     prefs.setCookie(cookies);
+                    prefs.setAdsCount(20);
                     Log.d(TAG, "All the cookies in a string:" + cookies);
 
                     getUserData();
@@ -724,10 +783,10 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             cookieSyncMngr.sync();
         }
     }
-    private void getCache(){
+    public void getCache(){
 
         //TODO duration audio
-
+        if(streamingManager != null) streamingManager.onStop();
         List<MediaMetaData> listsd = new ArrayList<>();
         int i = 1;
         File dir = new File(context.getCacheDir(), "/vkmusic");
@@ -777,7 +836,8 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         Log.e("CAshes:","songs= "+ i);
 
     }
-    private void getMyAudio(final int offset){
+    public void getMyAudio(final int offset){
+        if(streamingManager != null) streamingManager.onStop();
         String cookie = prefs.getCookie();
         listOfSongs.clear();
 
@@ -932,7 +992,9 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             List<Uri> files = Utils.getSelectedFilesFromResult(data);
             for (Uri uri: files) {
                 File file = Utils.getFileForUri(uri);
-                // Do something with the result...
+                // Do something with the result..
+                Log.e(TAG, "folder download: "+file.getPath());
+                prefs.setPath(file.getPath());
             }
         }
     }
@@ -987,9 +1049,43 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                 return true;
             }else {
                 prefs.setReview(prefs.getReview() + 1);
-                moveTaskToBack(true); return true;
+                overridePendingTransition(0, 0);
+                if(prefs.getAds() == prefs.getAdsCount()) {
+                    prefs.resetAds();
+                    showAds();
+                }else prefs.setAds();
+                finish();
+                //moveTaskToBack(true);
+                return true;
             }
 
         } return super.onKeyDown(keyCode, event);
+    }
+
+    private void ads(){
+
+        MobileAds.initialize(this, getResources().getString(R.string.id_ad1));
+        interstitial = new InterstitialAd(this);
+        interstitial.setAdUnitId(getResources().getString(R.string.int1));
+        AdRequest adRequesti = new AdRequest.Builder().build();
+        interstitial.loadAd(adRequesti);
+    }
+
+    public void showAds(){
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
+        ads();
+    }
+
+    @Override
+    protected void onPostResume() {
+        if(pgPlayPauseLayout != null){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && pgPlayPauseLayout != null && ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(MusicActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 199);
+            }
+        }
+        ads();
+        super.onPostResume();
     }
 }
