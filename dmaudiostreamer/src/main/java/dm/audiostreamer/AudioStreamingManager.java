@@ -270,9 +270,12 @@ public class AudioStreamingManager extends StreamingManager {
                                         audioPlayback.play(currentAudio);
                                         try {
 
-                                            new NotificationTask(context, currentAudio.getMediaArtist()+"_"+currentAudio.getMediaTitle(), id, currentAudio)
-                                                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 10);
-                                            id++;
+                                            if(prefs.getAutosave()){
+                                                Log.e(TAG, "autosave true");
+                                                new NotificationTask(context, currentAudio.getMediaArtist()+"_"+currentAudio.getMediaTitle(), id, currentAudio)
+                                                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 10);
+                                                id++;
+                                            }else Log.e(TAG, "autosave false");
 
                                         }catch (Exception e){
                                             e.printStackTrace();

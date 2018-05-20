@@ -497,34 +497,38 @@ public class AdapterMusic extends BaseAdapter {
 
     private void addToPlaylist(final MediaMetaData currentAudio){
 
-        final Prefs prefs = new Prefs(mContext);
-        String cookie = currentAudio.getMediaComposer();
-        String audio_id = currentAudio.getMediaUrl().split("_")[1];
-        String audio_owner_id = currentAudio.getMediaUrl().split("_")[0];
-        Map<String, String> body = new HashMap();
-        body.put("act", "add");
-        body.put("al", "1");
-        body.put("audio_id", audio_id);
-        body.put("audio_owner_id", audio_owner_id);
-        body.put("group_id", "0");
-        body.put("hash", currentAudio.getHashAdd());
-        body.put("from", "recoms_recoms");
+        try {
+            final Prefs prefs = new Prefs(mContext);
+            String cookie = currentAudio.getMediaComposer();
+            String audio_id = currentAudio.getMediaUrl().split("_")[1];
+            String audio_owner_id = currentAudio.getMediaUrl().split("_")[0];
+            Map<String, String> body = new HashMap();
+            body.put("act", "add");
+            body.put("al", "1");
+            body.put("audio_id", audio_id);
+            body.put("audio_owner_id", audio_owner_id);
+            body.put("group_id", "0");
+            body.put("hash", currentAudio.getHashAdd());
+            body.put("from", "recoms_recoms");
 
-        Call<ResponseBody> call = AudioStreamerApplication.getApi().alAudio(cookie, body);
-        call.enqueue(new Callback<ResponseBody>() {
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
-                try {
+            Call<ResponseBody> call = AudioStreamerApplication.getApi().alAudio(cookie, body);
+            call.enqueue(new Callback<ResponseBody>() {
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> res) {
+                    try {
 
-                    if(res.body() != null) Toast.makeText(mContext, "Добавлено в аудиозаписи", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    String er = e.toString();
-                    //ThrowableExtension.printStackTrace(e);
+                        if(res.body() != null) Toast.makeText(mContext, "Добавлено в аудиозаписи", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        String er = e.toString();
+                        //ThrowableExtension.printStackTrace(e);
+                    }
                 }
-            }
 
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-            }
-        });
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

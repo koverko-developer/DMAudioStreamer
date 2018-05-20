@@ -16,6 +16,7 @@ public class Prefs {
     private static final String APP_PREFERENCES_NAME = "name";
     private static final String APP_PREFERENCES_PHOTO = "photo";
     private static final String APP_PREFERENCES_REVIEW = "review";
+    private static final String APP_PREFERENCES_AUTOSAVE = "autosave";
     private SharedPreferences mSettings;
 
     public Prefs(Context context) {
@@ -42,4 +43,15 @@ public class Prefs {
         editor.putString(APP_PREFERENCES_ID, id);
         editor.apply();
     }
+     public void setAutosave(boolean b){
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putBoolean(APP_PREFERENCES_AUTOSAVE, b);
+        editor.apply();
+    }
+
+    public boolean getAutosave(){
+        //Log.e("PREFS", "ADS count = "+mSettings.getBoolean(APP_PREFERENCES_ADS_COUNT,true));
+        return mSettings.getBoolean(APP_PREFERENCES_AUTOSAVE,true);
+    }
+
 }

