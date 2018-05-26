@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_default_album_art" />
+        android:src="@drawable/bgls" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -59,9 +59,8 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bg_default_album_art"
-                app:border_color="@color/md_blue_grey_100"
-                app:border_width="20dp"
+                app:border_color="@color/colorPrimary"
+                app:border_width="3dp"
                 app:shadow="true"
                 app:shadow_color="@color/md_grey_400"
                 app:shadow_radius="10" />

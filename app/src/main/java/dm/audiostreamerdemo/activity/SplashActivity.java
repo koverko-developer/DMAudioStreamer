@@ -8,6 +8,7 @@ package dm.audiostreamerdemo.activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -26,9 +29,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import dm.audiostreamerdemo.R;
 import dm.audiostreamerdemo.network.Version;
+import dm.audiostreamerdemo.widgets.CircleImageView;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -36,9 +50,14 @@ public class SplashActivity extends AppCompatActivity {
     private static final String TAG = "SplashActivity";
     Handler handler = new Handler();
     private Context context;
+    CircleImageView img;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference version = database.getReference("scripts/DAS/version");
+
+    private DisplayImageOptions options;
+    private ImageLoader imageLoader = ImageLoader.getInstance();
+    private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,33 +65,17 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         this.context = SplashActivity.this;
+        img = (CircleImageView) findViewById(R.id.image_songAlbumArt) ;
+        this.options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.bg_default_album_art)
+                .showImageForEmptyUri(R.drawable.bg_default_album_art)
+                .showImageOnFail(R.drawable.bg_default_album_art).cacheInMemory(true)
+                .cacheOnDisk(true).considerExifParams(true)
+                .bitmapConfig(Bitmap.Config.RGB_565).build();
 
-        version.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        imageLoader.displayImage("https://pp.userapi.com/c845324/v845324984/5ec4c/nmjPDMMd-VU.jpg", img, options, animateFirstListener);
 
-                Version version = dataSnapshot.getValue(Version.class);
-
-                if(version != null) {
-
-                    if(version.isChek()) {
-                        Log.e(TAG, "new version true");
-                        showNewVersion(version.getPackages());
-                    }else {
-                        handler.postDelayed(postTask, delayTime);
-                    }
-
-                }else {
-                    handler.postDelayed(postTask, delayTime);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+        handler.postDelayed(postTask, delayTime);
 
 
 
@@ -126,6 +129,42 @@ public class SplashActivity extends AppCompatActivity {
             finish();
         }
     };
+    private static class AnimateFirstDisplayListener extends SimpleImageLoadingListener {
 
+        static final List<String> displayedImages = Collections.synchronizedList(new LinkedList<String>());
+
+        @Override
+        public void onLoadingStarted(String imageUri, View view) {
+            progressEvent(view, false);
+        }
+
+        @Override
+        public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+            progressEvent(view, true);
+        }
+
+        @Override
+        public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+            if (loadedImage != null) {
+                ImageView imageView = (ImageView) view;
+                boolean firstDisplay = !displayedImages.contains(imageUri);
+                if (firstDisplay) {
+                    FadeInBitmapDisplayer.animate(imageView, 1000);
+                    displayedImages.add(imageUri);
+                }
+            }
+            progressEvent(view, true);
+        }
+
+        private static void progressEvent(View v, boolean isShowing) {
+            try {
+                View parent = (View) ((ImageView) v).getParent();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 
 }

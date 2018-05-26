@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key'
+            keyPassword '3057686Kowerko1'
+            storeFile file('/home/mobi-app/development/project/player/DMAudioStreamer/key.jks')
+            storePassword '3057686Kowerko1'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "by.mozyrapps.vmp"
@@ -14,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -39,7 +51,6 @@ dependencies {
     compile 'com.nononsenseapps:filepicker:4.1.0'
     compile 'com.google.android.gms:play-services-ads:11.8.0'
     implementation 'com.google.firebase:firebase-database:11.8.0'
-
 }
 
 repositories {

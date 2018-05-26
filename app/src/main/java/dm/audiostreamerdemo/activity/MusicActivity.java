@@ -88,6 +88,7 @@ import dm.audiostreamerdemo.adapter.AdapterMusic;
 import dm.audiostreamerdemo.data.Prefs;
 import dm.audiostreamerdemo.data.VKMusic;
 import dm.audiostreamerdemo.network.AddToGroup;
+import dm.audiostreamerdemo.network.Ads;
 import dm.audiostreamerdemo.network.Like;
 import dm.audiostreamerdemo.network.MusicBrowser;
 import dm.audiostreamerdemo.network.MusicLoaderListener;
@@ -142,6 +143,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference groups = database.getReference("scripts/DAS/grps");
     DatabaseReference like = database.getReference("scripts/DAS/like");
+    DatabaseReference ads = database.getReference("scripts/DAS/ads");
 
     private DisplayImageOptions options;
     private ImageLoader imageLoader = ImageLoader.getInstance();
@@ -612,6 +614,9 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
                 .cacheOnDisk(true).considerExifParams(true)
                 .bitmapConfig(Bitmap.Config.RGB_565).build();
 
+        imageLoader.displayImage("https://pp.userapi.com/c845324/v845324984/5ec4c/nmjPDMMd-VU.jpg", image_songAlbumArt, options, animateFirstListener);
+        imageLoader.displayImage("https://pp.userapi.com/c845324/v845324984/5ec4c/nmjPDMMd-VU.jpg", img_bottom_albArt, options, animateFirstListener);
+
     }
 
     private void loadMusicData() {
@@ -655,8 +660,8 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         txt_bottom_SongAlb.setText(metaData.getMediaArtist());
 
         imageLoader.displayImage("http://i.ebayimg.com/00/s/MTAxMFgxMDEw/z/qJQAAOSwo4pYgDxn/$_57.JPG?set_id=8800005007", image_songAlbumArtBlur, options, animateFirstListener);
-        imageLoader.displayImage("http://blog.aport.ru/wp-content/uploads/2016/02/apple-music-android-logo.jpg", image_songAlbumArt, options, animateFirstListener);
-        imageLoader.displayImage("http://blog.aport.ru/wp-content/uploads/2016/02/apple-music-android-logo.jpg", img_bottom_albArt, options, animateFirstListener);
+        imageLoader.displayImage("https://pp.userapi.com/c845324/v845324984/5ec4c/nmjPDMMd-VU.jpg", image_songAlbumArt, options, animateFirstListener);
+        imageLoader.displayImage("https://pp.userapi.com/c845324/v845324984/5ec4c/nmjPDMMd-VU.jpg", img_bottom_albArt, options, animateFirstListener);
     }
 
     private static class AnimateFirstDisplayListener extends SimpleImageLoadingListener {
@@ -1120,6 +1125,7 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         ads();
         groupVK();
         like();
+        listenerAdsCount();
         super.onPostResume();
     }
 
@@ -1272,5 +1278,28 @@ public class MusicActivity extends AppCompatActivity implements CurrentSessionCa
         });
 
     }
+    private void listenerAdsCount(){
+        ads.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                try {
+                    Ads ads = dataSnapshot.getValue(Ads.class);
+
+                    if(ads != null) prefs.setAdsCount(ads.getCount());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 
 }

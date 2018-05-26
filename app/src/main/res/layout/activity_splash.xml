@@ -5,7 +5,8 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_blue_grey_700">
+    android:alpha="0.35"
+    android:background="@drawable/bgls">
 
     <RelativeLayout
         android:layout_width="240dp"
@@ -21,9 +22,8 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_default_album_art"
             app:border_color="@color/md_blue_grey_300"
-            app:border_width="22dp"
+            app:border_width="5dp"
             app:shadow="true"
             app:shadow_color="@color/md_grey_400"
             app:shadow_radius="10" />
